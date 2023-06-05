@@ -40,8 +40,9 @@ public:
         tar/=2;
         // vector<vector<int>> dp(n,vector<int>(tar+1,-1));
         // return recur(n-1,num,tar,dp);
+        
+        //Tabulation
         vector<vector<int>> dp(n,vector<int>(tar+1,0));
-    
         // if(num[0] == 0) dp[0][0] =2;
         // else
         // {
