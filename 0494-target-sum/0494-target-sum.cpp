@@ -53,11 +53,17 @@ public:
         //     {
         //         dp[0][num[0]]=1;
         //     }
-        // } 
+        // }
+
+        //???????ORRRRR
+
         // if(num[0] == 0) dp[0][0] =2; // 2 cases -pick and not pick
         // else dp[0][0] = 1;  // 1 case - not pick
 
         // if(num[0]!=0 && num[0]<=tar) dp[0][num[0]] = 1;  // 1 case -pick
+        
+        //???????ORRRRR
+        
         for(int i=0;i<n;i++)
         {
             dp[i][0]=1;
