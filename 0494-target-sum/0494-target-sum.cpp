@@ -42,10 +42,34 @@ public:
         // return recur(n-1,num,tar,dp);
         vector<vector<int>> dp(n,vector<int>(tar+1,0));
     
-        if(num[0] == 0) dp[0][0] =2;  // 2 cases -pick and not pick
-        else dp[0][0] = 1;  // 1 case - not pick
-        
-        if(num[0]!=0 && num[0]<=tar) dp[0][num[0]] = 1;  // 1 case -pick
+        // if(num[0] == 0) dp[0][0] =2;
+        // else
+        // {
+        //     for(int i=0;i<n;i++)
+        //     {
+        //         dp[i][0]=1;
+        //     }
+        //     if(num[0]<=tar && num[0]!=0)
+        //     {
+        //         dp[0][num[0]]=1;
+        //     }
+        // } 
+        // if(num[0] == 0) dp[0][0] =2; // 2 cases -pick and not pick
+        // else dp[0][0] = 1;  // 1 case - not pick
+
+        // if(num[0]!=0 && num[0]<=tar) dp[0][num[0]] = 1;  // 1 case -pick
+        for(int i=0;i<n;i++)
+        {
+            dp[i][0]=1;
+        }
+        if(num[0]<=tar)
+        {
+            dp[0][num[0]]=1;
+        }
+        if(num[0]==0)
+        {
+            dp[0][0]=2;
+        }
         
         for(int ind = 1; ind<n; ind++){
             for(int target= 0; target<=tar; target++){
