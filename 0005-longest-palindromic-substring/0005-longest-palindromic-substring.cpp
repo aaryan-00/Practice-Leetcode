@@ -23,6 +23,9 @@ public:
         //     find_palindrome(s,i,i+1);
         // }
         // return ans;
+        
+        //ORRRRR
+
         string t=s;
         reverse(t.begin(),t.end());
         int n=s.size();
