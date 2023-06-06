@@ -28,7 +28,6 @@ public:
         int n=s.size();
         vector<vector<int>> dp(n+1,vector<int>(n+1,0));
         int maxi=0;
-        string ans="";
         for(int i=1;i<=n;i++)
         {
             for(int j=1;j<=n;j++)
