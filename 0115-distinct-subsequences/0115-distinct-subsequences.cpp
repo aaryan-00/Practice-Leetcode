@@ -14,17 +14,26 @@ public:
         {
             return dp[i][j];
         }
+        // if(s[i]==t[j])
+        // {
+        //     return dp[i][j]=Memo(s,t,i-1,j-1,dp)+Memo(s,t,i-1,j,dp);   
+        // }
+        // else
+        // {
+        //     return dp[i][j]= Memo(s,t,i-1,j,dp);
+        // }
+
+        //orrr
+        
         int ans=0;
         if(s[i]==t[j])
         {
-            // return dp[i][j]=Memo(s,t,i-1,j-1,dp)+Memo(s,t,i-1,j,dp); 
             ans+=Memo(s,t,i-1,j-1,dp);
-            ans+=Memo(s,t,i-1,j,dp);   // return dp[i][j]+=Memo(s,t,i-1,j-1,dp);
+            ans+=Memo(s,t,i-1,j,dp);   
         }
         else
         {
-            ans+=Memo(s,t,i-1,j,dp);
-            // return dp[i][j]= Memo(s,t,i-1,j,dp);
+            ans+=Memo(s,t,i-1,j,dp); 
         }
         return dp[i][j]=ans;
     }
