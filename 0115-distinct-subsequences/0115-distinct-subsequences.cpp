@@ -44,8 +44,8 @@ public:
         // return Memo(s,t,n-1,m-1,dp);
 
         //tabulation
-
-        vector<vector<unsigned>> dp(n+1,vector<unsigned>(m+1,0));
+        int M=1e9+7;
+        vector<vector<int>> dp(n+1,vector<int>(m+1,0));
         for(int i=0;i<=n;i++)
         {
             dp[i][0]=1;
@@ -59,7 +59,7 @@ public:
             {
                 if(s[i-1]==t[j-1])
                 {
-                    dp[i][j]=dp[i-1][j-1]+dp[i-1][j];
+                    dp[i][j]=(dp[i-1][j-1]+dp[i-1][j])%M;
                 }
                 else
                 {
