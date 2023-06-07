@@ -18,10 +18,10 @@ public:
         {
             return dp[i][j]=memo(s,t,i-1,j-1,dp);
         }
-        int insert=1+memo(s,t,i,j-1,dp);
-        int deletee=1+memo(s,t,i-1,j,dp);
-        int replace=1+memo(s,t,i-1,j-1,dp);
-        return dp[i][j]=min(insert,min(deletee,replace));
+        int insert=memo(s,t,i,j-1,dp);
+        int deletee=memo(s,t,i-1,j,dp);
+        int replace=memo(s,t,i-1,j-1,dp);
+        return dp[i][j]=1+min(insert,min(deletee,replace));
     }
     int minDistance(string word1, string word2) {
         int n=word1.size(),m=word2.size();
