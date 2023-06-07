@@ -44,14 +44,11 @@ public:
         // return Memo(s,t,n-1,m-1,dp);
 
         //tabulation
-        int M=1e9+7;
+        int M=1e9+7; //or use unsinged int
         vector<vector<int>> dp(n+1,vector<int>(m+1,0));
         for(int i=0;i<=n;i++)
         {
             dp[i][0]=1;
-        }
-        for(int i=1;i<m+1;i++){
-            dp[0][i]=0;
         }
         for(int i=1;i<=n;i++)
         {
