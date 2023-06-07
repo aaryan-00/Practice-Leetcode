@@ -25,6 +25,7 @@ public:
         {
             return dp[i][j];
         }
+        //if equal
         if(s[i]==p[j])
         {
             return dp[i][j]=memo(s,p,i-1,j-1,dp);
