@@ -10,10 +10,11 @@ public:
             {
                 max_profit=max(max_profit,prices[i]-min_buy);
             }
-            if(min_buy>prices[i])
-            {
-                min_buy=prices[i];
-            }
+            // if(min_buy>prices[i])
+            // {
+            //     min_buy=prices[i];
+            // }
+            min_buy=min(min_buy,prices[i]);
         }
         return max_profit;
 
