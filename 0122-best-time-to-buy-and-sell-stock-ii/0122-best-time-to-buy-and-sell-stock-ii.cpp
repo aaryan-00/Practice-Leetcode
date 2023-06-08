@@ -57,26 +57,38 @@ public:
         // return dp[0][1];
 
         //space optimization
-        vector<int> next(2,0);
-        next[0]=next[1]=0;
-        for(int ind=n-1;ind>=0;ind--)
-        {
-            for(int buy=0;buy<=1;buy++)
-            {
-                int profit=0;
-                if(buy==1)
-                {
-                    profit=max(-prices[ind]+next[0],next[1]);
+        // vector<int> next(2,0);
+        // next[0]=next[1]=0;
+        // for(int ind=n-1;ind>=0;ind--)
+        // {
+        //     for(int buy=0;buy<=1;buy++)
+        //     {
+        //         int profit=0;
+        //         if(buy==1)
+        //         {
+        //             profit=max(-prices[ind]+next[0],next[1]);
 
-                }
-                else
-                {
-                    profit=max(prices[ind]+next[1],next[0]);
-                }
-                next[buy]=profit;
+        //         }
+        //         else
+        //         {
+        //             profit=max(prices[ind]+next[1],next[0]);
+        //         }
+        //         next[buy]=profit;
+        //     }
+        // }
+        // return next[1];
+
+        //easy loop
+        int profit=0;
+        for(int i=1;i<n;i++)
+        {
+            if(prices[i]-prices[i-1]>0)
+            {
+                profit+=prices[i]-prices[i-1];
             }
         }
-        return next[1];
+        return profit;
+
 
 
     }
