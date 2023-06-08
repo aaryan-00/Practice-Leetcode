@@ -35,16 +35,14 @@ public:
             {
                 for(int cap=1;cap<=k;cap++)
                 {
-                    int profit=0;
                     if(buy==1)
                     {
-                        profit=max(-prices[ind]+next[0][cap],next[1][cap]);
+                        next[buy][cap]=max(-prices[ind]+next[0][cap],next[1][cap]);
                     }
                     else
                     {
-                        profit=max(prices[ind]+next[1][cap-1],next[0][cap]);
+                        next[buy][cap]=max(prices[ind]+next[1][cap-1],next[0][cap]);
                     }
-                    next[buy][cap]=profit;
                 }
             }
         }
