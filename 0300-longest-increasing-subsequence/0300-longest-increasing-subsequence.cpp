@@ -22,20 +22,38 @@ public:
         int n=nums.size();
         // vector<int> dp(n+1,-1);
         // return recur(nums,0,-1,dp);
-        vector<int> dp(n+1,0);
-        for(int i=n-1;i>=0;i--)
+        
+        //tabulation
+        // vector<int> dp(n+1,0);
+        // for(int i=n-1;i>=0;i--)
+        // {
+        //     for(int prev=i-1;prev>=-1;prev--)
+        //     {
+        //         int tkn=0;
+        //         if(prev==-1 || nums[i]>nums[prev])
+        //         {
+        //             tkn = 1+dp[i+1];
+        //         }
+        //         int ntkn=dp[prev+1];
+        //         dp[prev+1]=max(tkn,ntkn);
+        //     }
+        // }
+        // return dp[0];
+
+        vector<int> temp;
+        temp.push_back(nums[0]);
+        for(int i=1;i<n;i++)
         {
-            for(int prev=i-1;prev>=-1;prev--)
+            if(temp.back()<nums[i])
             {
-                int tkn=0;
-                if(prev==-1 || nums[i]>nums[prev])
-                {
-                    tkn = 1+dp[i+1];
-                }
-                int ntkn=dp[prev+1];
-                dp[prev+1]=max(tkn,ntkn);
+                temp.push_back(nums[i]);
+            }
+            else
+            {
+                int ind=lower_bound(temp.begin(),temp.end(),nums[i])-temp.begin();
+                temp[ind]=nums[i];
             }
         }
-        return dp[0];
+        return temp.size();
     }
 };
