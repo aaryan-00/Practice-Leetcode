@@ -4,7 +4,7 @@ public:
     vector<int> num;
     int sum(int i)
     {
-        i=i+1;
+        // i=i+1;
         int ans=0;
         for(;i>0;i-=i&(-i))
         {
@@ -13,7 +13,7 @@ public:
         return ans;
     }
     void update_all(int i, int val) {
-        i=i+1;
+        // i=i+1;
         for(;i<=bit.size()-1;i+=i&(-i))
         {
             bit[i]+=val;
@@ -25,17 +25,20 @@ public:
         num=nums;
         for(int i=0;i<n;i++)
         {
-            update_all(i,nums[i]);
+            // update_all(i,nums[i]);
+            update_all(i+1,nums[i]);
         }
     }
     
     void update(int i, int val) {
-        update_all(i,val-num[i]);
+        // update_all(i,val-num[i]);
+        update_all(i+1,val-num[i]);
         num[i]=val;
     }
     
     int sumRange(int left, int right) {
-        return sum(right)-sum(left-1);
+        // return sum(right)-sum(left-1);
+        return sum(right+1)-sum(left-1+1);
     }
 };
 
