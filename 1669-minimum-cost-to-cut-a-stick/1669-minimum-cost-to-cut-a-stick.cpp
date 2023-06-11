@@ -29,9 +29,9 @@ public:
         //tabulation
         //i:1->c+1 && j:c->0
         vector<vector<int>> dp(c+2,vector<int>(c+2,0));
-        for(int i=c+1;i>=1;i--)
+        for(int i=c;i>=1;i--)
         {
-            for(int j=0;j<=c;j++)
+            for(int j=1;j<=c;j++)
             {
                 if(i>j) continue;
                 int mini=INT_MAX;
