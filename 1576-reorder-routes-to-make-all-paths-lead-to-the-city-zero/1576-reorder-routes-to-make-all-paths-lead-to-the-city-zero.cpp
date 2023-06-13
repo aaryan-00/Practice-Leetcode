@@ -26,7 +26,7 @@ public:
                 if(vis[i]==false)
                 {
                     // if(s.find({i,curr})==s.end())
-                    if(s.find({curr,i})==s.end())
+                    if(s.find({curr,i})!=s.end())
                     {
                         ans++;
                     }
@@ -34,6 +34,7 @@ public:
                 }
             }  
         }
-        return n-1-ans;
+        // return n-1-ans;
+        return ans;
     }
 };
