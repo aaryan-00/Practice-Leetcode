@@ -7,7 +7,8 @@ public:
         {
             int u=connections[i][0];
             int v=connections[i][1];
-            s.insert({v,u});
+            // s.insert({v,u});
+            s.insert({u,v});
             adj[u].push_back(v);
             adj[v].push_back(u);
         }
@@ -24,8 +25,8 @@ public:
             {
                 if(vis[i]==false)
                 {
-                    // pair<int,int> p={i,curr};
-                    if(s.find({i,curr})==s.end())
+                    // if(s.find({i,curr})==s.end())
+                    if(s.find({curr,i})==s.end())
                     {
                         ans++;
                     }
