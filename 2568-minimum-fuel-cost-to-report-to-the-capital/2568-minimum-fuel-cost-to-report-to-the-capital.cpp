@@ -13,7 +13,8 @@ public:
         }
         if(src!=0)
         {
-            ans+=ceil(double(rep)/seats);
+            // ans+=ceil(double(rep)/seats);
+            ans+= rep/seats + (rep%seats!=0);
         }
         // cout<<rep<<" "<<src<<endl;
         return rep;
@@ -43,9 +44,7 @@ public:
                     q.push(i);
                 }
             }
-
         }
-
     }
     long long minimumFuelCost(vector<vector<int>>& roads, int seats) {
         long long n=roads.size()+1;
@@ -59,12 +58,12 @@ public:
             indegree[u]++;
             indegree[v]++;
         }
-        // dfs(0,-1,adj,seats);
+        dfs(0,-1,adj,seats);
         for(auto i:indegree)
         {
             cout<<i<<" ";
         }
-        bfs(indegree,adj,seats);
+        // bfs(indegree,adj,seats);
         return ans;
     }
 };
