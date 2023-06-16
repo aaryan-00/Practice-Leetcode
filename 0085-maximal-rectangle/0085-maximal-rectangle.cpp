@@ -1,6 +1,6 @@
 class Solution {
 public:
-        int largestRectangleArea(vector<int>& heights) {
+    int largestRectangleArea(vector<int>& heights) {
         stack<int> s;
         int n=heights.size();
         int ans=0;
