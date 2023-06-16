@@ -10,7 +10,7 @@ public:
         return dp[i]=max(nums[i]+recur(i-2,nums,dp),recur(i-1,nums,dp));
     }
     int deleteAndEarn(vector<int>& nums) {
-        int n=2e4+1;
+        int n=1e4+1;
         vector<int> hash(n,0);
         for(auto i:nums)
         {
