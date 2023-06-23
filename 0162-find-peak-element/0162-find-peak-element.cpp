@@ -22,12 +22,12 @@ public:
             //     e=mid-1;
             // }
             // else s=mid+1;
-            if(nums[mid]>nums[mid+1])
+            if(nums[mid]<nums[mid+1])
             {
-                e=mid;
+                s=mid+1;
             }
-            else s=mid+1;
+            else e=mid;
         }
-        return s;
+        return e;
     }
 };
