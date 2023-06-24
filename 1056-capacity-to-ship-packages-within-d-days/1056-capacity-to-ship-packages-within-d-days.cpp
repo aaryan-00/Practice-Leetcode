@@ -13,7 +13,7 @@ public:
                 curr_w=i;
             }
         }
-        cout<<cnt<<endl;
+        // cout<<cnt<<endl;
         return cnt<=days;
     }
     int shipWithinDays(vector<int>& weights, int days) {
@@ -22,13 +22,13 @@ public:
         {
             sum+=i;
         }
-        cout<<sum<<endl;
+        // cout<<sum<<endl;
         int lo=*max_element(weights.begin(),weights.end()),hi=sum;
         int ans=1;
         while(lo<=hi)
         {
             int mid=(lo+hi)>>1;
-            cout<<mid<<" ";
+            // cout<<mid<<" ";
             if(isPossible(weights,mid,days))
             {
                 ans=mid;
