@@ -3,10 +3,14 @@ public:
     bool isPossible(vector<int> &piles,int mid,int h)
     {
         long cnt=0;
-        for(int i=0;i<piles.size();i++)
+        // for(int i=0;i<piles.size();i++)
+        // {
+        //     cnt+=(piles[i]/mid);
+        //     if(piles[i]%mid)cnt++;
+        // }
+        for(auto p:piles)
         {
-            cnt+=(piles[i]/mid);
-            if(piles[i]%mid)cnt++;
+            cnt+=(p+mid-1)/mid;
         }
         cout<<cnt<<endl;
         return cnt<=h;
