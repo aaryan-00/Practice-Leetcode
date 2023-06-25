@@ -28,7 +28,7 @@ public:
             sum+=nums[i];
         }
         // cout<<sum<<endl;
-        int s=*min_element(nums.begin(),nums.end()),e=sum;
+        int s=*max_element(nums.begin(),nums.end()),e=sum;
         int ans=0;
         while(s<=e)
         {
