@@ -10,8 +10,8 @@ public:
         }
         long long M=1e9+7;
         priority_queue<pair<long long,long long>,vector<pair<long long,long long>>,greater<pair<long long,long long>>> pq;
-        vector<long long> dis(n+1,1e15);
-        vector<long long> ways(n+1,0);
+        vector<long long> dis(n,1e18);
+        vector<long long> ways(n,0);
         ways[0]=1;
         dis[0]=0;
         pq.push({0,0});
