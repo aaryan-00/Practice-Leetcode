@@ -26,17 +26,18 @@ public:
             {
                 long long next=i.first;
                 long long nextDis=i.second;
-                if((nextDis+Dis)==dis[next])
-                {
-                    ways[next]=(ways[next]+ways[node])%M;
-                    // dis[next]=nextDis+Dis;
-                    // pq.push({dis[next],next});
-                }
+
                 if((nextDis+Dis)<dis[next])
                 {
                     ways[next]=ways[node]%M;
                     dis[next]=(nextDis+Dis);
                     pq.push({dis[next],next});
+                }
+                else if((nextDis+Dis)==dis[next])
+                {
+                    ways[next]=(ways[next]+ways[node])%M;
+                    // dis[next]=nextDis+Dis;
+                    // pq.push({dis[next],next});
                 }
             }
         }
