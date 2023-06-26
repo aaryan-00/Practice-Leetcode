@@ -22,7 +22,7 @@ public:
             {
                 int nextInd=i.first;
                 int nextPrice=i.second;
-                if(prices[nextInd]>nextPrice+Price && stop<=k)
+                if(prices[nextInd]>nextPrice+Price)
                 {
                     prices[nextInd]=nextPrice+Price;
                     q.push({stop+1,{nextInd,prices[nextInd]}});
