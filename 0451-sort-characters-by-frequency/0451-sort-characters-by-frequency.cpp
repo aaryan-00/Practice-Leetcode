@@ -17,10 +17,11 @@ public:
             char c=pq.top().second;
             int cnt=pq.top().first;
             pq.pop();
-            while(cnt--)
-            {
-                ans+=c;
-            }
+            // while(cnt--)
+            // {
+            //     ans+=c;
+            // }
+            ans.append(cnt,c);
         }
         return ans;
     }
