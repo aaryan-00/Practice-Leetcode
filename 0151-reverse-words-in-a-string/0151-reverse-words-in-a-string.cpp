@@ -8,19 +8,20 @@ public:
         {
             i++;
         }
-        while(n-1>=0 && s[n-1]==' ')
+        n--;
+        while(n>=0 && s[n]==' ')
         {
             n--;
         }
         string temp="";
-        while(i<n)
+        while(i<=n)
         {
             if(s[i]==' ')
             {
                 ans=temp+ans;
                 ans=" "+ans;
                 temp="";
-                while(s[i]==' ' && i<n)
+                while(s[i]==' ' && i<=n)
                 {
                     i++;
                 } 
