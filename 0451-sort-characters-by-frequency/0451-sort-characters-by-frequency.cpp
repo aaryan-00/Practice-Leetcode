@@ -22,8 +22,10 @@ public:
             //     ans+=c;
             // }
 
+            //or
             // ans.append(cnt,c);
 
+            //or
             ans+=string(cnt,c);
         }
         return ans;
