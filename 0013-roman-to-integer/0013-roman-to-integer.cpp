@@ -8,7 +8,7 @@ public:
         for(auto i:s)
         {
             int val=mp[i];
-            cout<<prev<<" "<<val<<endl;
+            // cout<<prev<<" "<<val<<endl;
             if(prev<val)
             {
                 ans+=val-2*prev;
