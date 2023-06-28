@@ -4,13 +4,10 @@ public:
     {
         long long ans=0;
         int left=0;
-        int cnt=0;
         unordered_map<int,int> mp;
-        // vector<long long> mp(2e4,0);
         for(int i=0;i<nums.size();i++)
         {
             mp[nums[i]]++;
-            // if(mp[nums[i]]==1) cnt++;
             
             while(mp.size()>k)
             {
