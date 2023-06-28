@@ -24,7 +24,6 @@ public:
             }
             else if(s[i]=='+')
             {
-                // ans+=s[i];
                 i++;
                 while(i<s.size() && s[i]>='0' && s[i]<='9')
                 {
@@ -48,7 +47,7 @@ public:
                 break;
             }
         }
-        cout<<ans<<endl;
+        // cout<<ans<<endl;
         double res=0;
         long long sign=1;
         int j=0;
@@ -60,14 +59,6 @@ public:
         for(;j<ans.size();j++)
         {
             res=res*10+ans[j]-'0';
-            // if(res<=INT_MIN)
-            // {
-            //     return INT_MIN;
-            // }
-            // if(res>=INT_MAX)
-            // {
-            //     return INT_MAX;
-            // }
         }
         res=res*sign;
 
