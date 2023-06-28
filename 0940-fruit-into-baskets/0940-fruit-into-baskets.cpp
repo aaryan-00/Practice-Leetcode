@@ -21,6 +21,7 @@ public:
     //     return ans;
     // }
 
+//using hash as its given that fruit type is less than n(fruits.size()) 
     int totalFruit(vector<int>& fruits) {
         int n=fruits.size();
         vector<int> hashh(n+1,0);
