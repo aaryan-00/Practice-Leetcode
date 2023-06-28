@@ -17,13 +17,11 @@ public:
     //             left++;
     //         }
     //         ans=max(ans,i-left+1);
-    //     }
-        
+    //     }    
     //     return ans;
     // }
 
-        int totalFruit(vector<int>& fruits) {
-
+    int totalFruit(vector<int>& fruits) {
         int n=fruits.size();
         vector<int> hashh(n+1,0);
         int ans=0,left=0,cnt=0;
@@ -42,7 +40,6 @@ public:
             }
             ans=max(ans,i-left+1);
         }
-        
         return ans;
     }
 };
