@@ -18,7 +18,7 @@ public:
             int node=pq.top().second;
             double prob=pq.top().first;
             pq.pop();
-            if(prob<dp[node]) continue;
+            // if(prob<dp[node]) continue;
             for(auto i:adj[node])
             {
                 int next=i.first;
