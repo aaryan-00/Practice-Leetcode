@@ -16,13 +16,13 @@ public:
                 mini=cnt[curr];
                 for(int k=0;k<26;k++)
                 {
-                    if(cnt[k]!=0)
+                    if(cnt[k]>=1)
                     {
                         mini=min(mini,cnt[k]);
                     }
                 }
                 // cout<<abs(maxi-mini)<<endl;
-                ans += (maxi-mini);
+                ans += maxi-mini;
             }
         }
         return ans;
