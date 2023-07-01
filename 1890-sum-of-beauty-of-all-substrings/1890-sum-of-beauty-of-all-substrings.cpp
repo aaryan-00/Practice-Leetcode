@@ -20,11 +20,9 @@ public:
                         mini=min(mini,cnt[k]);
                     }
                 }
-                // cout<<abs(maxi-mini)<<endl;
                 ans += maxi-mini;
             }
         }
         return ans;
-
     }
 };
