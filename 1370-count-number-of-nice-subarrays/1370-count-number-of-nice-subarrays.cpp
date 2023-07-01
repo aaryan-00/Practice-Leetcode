@@ -13,10 +13,17 @@ public:
                 if(nums[start]&1) cnt--;
                 start++;
             }
-            // cout<<cnt<<endl;
             if(cnt<=k) ans+=(i-start+1);
+
+            // or
+
+            // while(cnt>k && start<=i)
+            // {
+            //     if(nums[start]&1) cnt--;
+            //     start++;
+            // }
+            // ans+=(i-start+1); //will work when start<=i;
         }
-        // cout<<ans<<endl;
         return ans;
 
     }
