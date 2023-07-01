@@ -63,11 +63,11 @@ public:
             }
             if(cnt>k)
             {
-                // while(cnt!=k)
-                // {
+                while(cnt!=k)
+                {
                     if(nums[start]==0) cnt--;
                     start++;
-                // }
+                }
             }
             ans=max(ans,i-start+1);
         }
