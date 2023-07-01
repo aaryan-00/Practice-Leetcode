@@ -5,8 +5,7 @@ public:
         int n=s.size();
         for(int i=0;i<n;i++)
         {
-            // vector<int> hashh(26,0);
-            int cnt[26] = {};
+            vector<int> cnt(26,0);
             int mini=INT_MAX, maxi=INT_MIN;
             for(int j=i;j<n;j++)
             {
