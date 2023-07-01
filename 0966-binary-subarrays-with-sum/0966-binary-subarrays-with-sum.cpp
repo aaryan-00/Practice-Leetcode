@@ -13,10 +13,9 @@ public:
                 sum-=nums[start];
                 start++;
             }
-            if(sum<=goal) ans+=(i-start+1);
-            
+            if(sum<=goal) ans+=(i-start+1);   
         }
-        cout<<ans<<endl;
+        // cout<<ans<<endl;
         return ans;
 
     }
