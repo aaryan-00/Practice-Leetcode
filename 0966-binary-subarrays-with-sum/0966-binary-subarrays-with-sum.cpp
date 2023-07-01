@@ -8,12 +8,20 @@ public:
         for(int i=0;i<nums.size();i++)
         {
             sum+=nums[i];
-            while(sum>goal && start<i)
+            // while(sum>goal && start<i)
+            // {
+            //     sum-=nums[start];
+            //     start++;
+            // }
+            // if(sum<=goal) ans+=(i-start+1);
+
+            // or
+            while(sum>goal && start<=i)
             {
                 sum-=nums[start];
                 start++;
             }
-            if(sum<=goal) ans+=(i-start+1);   
+            ans+=(i-start+1);
         }
         // cout<<ans<<endl;
         return ans;
