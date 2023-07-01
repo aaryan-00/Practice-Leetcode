@@ -12,7 +12,7 @@ public:
             {
                 mp[s[start]-'A']--;
                 start++;
-                cout<<maxFreq<<endl;
+                // cout<<maxFreq<<endl;
                 maxFreq=0;
                 for(int i=0;i<26;i++)
                 {
