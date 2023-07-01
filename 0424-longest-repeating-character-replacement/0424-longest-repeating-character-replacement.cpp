@@ -8,9 +8,7 @@ public:
             int curr=s[i]-'A';
             mp[curr]++;
             maxFreq=max(maxFreq,mp[curr]);
-            int len=i-start+1;
-            int remain=len-maxFreq;
-            if(remain>k)
+            while(i-start+1 - maxFreq>k)
             {
                 mp[s[start]-'A']--;
                 start++;
