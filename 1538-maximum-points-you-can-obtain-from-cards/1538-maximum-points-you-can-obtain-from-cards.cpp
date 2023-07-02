@@ -1,24 +1,39 @@
 class Solution {
 public:
+    //preFix sum
+    // int maxScore(vector<int>& cardPoints, int k) {
+    //     int n=cardPoints.size();
+    //     vector<int> preSum(n+1,0);
+    //     for(int i=0;i<n;i++)
+    //     {
+    //         preSum[i+1]=preSum[i]+cardPoints[i];
+    //     }
+    //     int ans=0;
+    //     for(int i=0;i<=k;i++)
+    //     {
+    //         int curr=preSum[i]+preSum[n]-preSum[n-(k-i)];
+    //         ans=max(ans,curr);
+    //     }
+    //     return ans;
+    // }
+
+    //sliding window
     int maxScore(vector<int>& cardPoints, int k) {
         int n=cardPoints.size();
-        vector<int> preSum(n+1,0);
-        for(int i=0;i<n;i++)
+        int sum=0;
+        for(int i=0;i<k;i++)
         {
-            preSum[i+1]=preSum[i]+cardPoints[i];
+            sum+=cardPoints[i];
         }
-        // for(auto i:preSum)
-        // {
-        //     cout<<i<<" ";
-        // }
-        int ans=0;
-        for(int i=0;i<=k;i++)
+        // cout<<sum<<endl;
+        int ans=sum;
+        for(int i=k-1;i>=0;i--)
         {
-            int curr=preSum[i]+preSum[n]-preSum[n-(k-i)];
-            // cout<<curr<<endl;
-            ans=max(ans,curr);
+            sum-=cardPoints[i];
+            sum+=cardPoints[n-k+i];
+            // cout<<sum<<endl;
+            ans=max(ans,sum);
         }
-        // cout<<endl;
         return ans;
     }
 };
