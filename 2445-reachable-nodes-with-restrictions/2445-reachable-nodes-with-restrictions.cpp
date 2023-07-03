@@ -62,7 +62,7 @@ public:
 
 
 
-
+//here we marked restricted node visited, so there is no going to their subtrees
     int ans=0;
     void dfs(int node,vector<int> adj[],vector<bool> &vis)
     {
