@@ -52,10 +52,6 @@ public:
             {
                 swap(b, a);
             }
-            // if(b==1)
-            // {
-            //     swap(b,a);
-            // }
             par[b] = a;
             sizes[a] += sizes[b];
         }
