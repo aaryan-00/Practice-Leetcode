@@ -92,6 +92,8 @@ public:
     //     return ans;
     // }
 
+
+//union find
     vector<int> par;
     vector<int> sizes;
     void make(int v)
@@ -111,10 +113,10 @@ public:
         b = find(b);
         if (a != b)
         {
-            if (sizes[b] > sizes[a])
-            {
-                swap(b, a);
-            }
+            // if (sizes[b] > sizes[a])
+            // {
+            //     swap(b, a);
+            // }
             if(b==0)
             {
                 swap(a,b);
