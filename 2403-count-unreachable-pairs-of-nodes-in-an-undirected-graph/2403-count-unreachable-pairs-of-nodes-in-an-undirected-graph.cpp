@@ -23,10 +23,10 @@ public:
             {
                 swap(b, a);
             }
-            if(b<a)
-            {
-                swap(a,b);
-            }
+            // if(b<a)
+            // {
+            //     swap(a,b);
+            // }
             par[b] = a;
             sizes[a] += sizes[b];
         }
@@ -53,18 +53,29 @@ public:
         }
         cout<<endl;
         
-        set<int> parents;
-        long long tot_sz=n;
+        // set<int> parents;
+        // long long tot_sz=n;
+        // long long ans=0;
+        // for(int i=0;i<n;i++)
+        // {
+        //     int curr_par=find(i);
+        //     if(parents.count(curr_par)==0)
+        //     {
+        //         long long curr_sz=sizes[i];
+        //         tot_sz-=curr_sz;
+        //         ans+=curr_sz*tot_sz;
+        //         parents.insert(curr_par);
+        //     }
+        // }
+        long long current=0;
         long long ans=0;
-        for(int i=0;i<n;i++)
-        {
-            int curr_par=find(i);
-            if(parents.count(curr_par)==0)
-            {
-                long long curr_sz=sizes[i];
-                tot_sz-=curr_sz;
-                ans+=curr_sz*tot_sz;
-                parents.insert(curr_par);
+        for(int i = 0; i < n; i++) {
+            if(find(i) == i) {
+                if(sizes[i] == n) {
+                    return 0;
+                }
+                    ans += current * (int)sizes[i];
+                    current += (int)sizes[i];
             }
         }
         return ans;
