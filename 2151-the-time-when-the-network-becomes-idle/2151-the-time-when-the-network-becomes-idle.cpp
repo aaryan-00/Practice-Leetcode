@@ -38,20 +38,40 @@ public:
             
         }
         vector<int> dis=dijkstra(n,adj,0);
+        // int ans=0;
+        // for(int i=1;i<n;i++)
+        // {
+        //     int time=dis[i]*2;
+        //     int p=patience[i];
+        //     int numb=time/p;
+        //     if(time%p==0)
+        //     {
+        //         numb--; 
+        //     }
+        //     int last=numb*p;
+        //     int temp=2*dis[i]+last+1;
+        //     ans=max(ans,temp);
+        // }
+        for(auto &i:dis)
+        {
+            i*=2;
+        }
         int ans=0;
         for(int i=1;i<n;i++)
         {
-            int time=dis[i]*2;
-            int p=patience[i];
-            int numb=time/p;
-            if(time%p==0)
+            int curr_dis=dis[i];
+            if(curr_dis%patience[i]==0)
             {
-                numb--; 
+                int temp=curr_dis*2+1-patience[i];
+                ans=max(ans,temp);
             }
-            int last=numb*p;
-            int temp=2*dis[i]+last+1;
-            ans=max(ans,temp);
+            else
+            {
+                int temp=curr_dis*2+1-curr_dis%patience[i];
+                ans=max(ans,temp);
+            }
         }
+
         return ans;
     }
 };
