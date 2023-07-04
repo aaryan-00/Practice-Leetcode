@@ -38,6 +38,51 @@ public:
             
         }
         vector<int> dis=dijkstra(n,adj,0);
+//bellman ford
+        // vector<int> dis2(n,1e8);
+        // dis2[0]=0;
+        // for(int i=0;i<n-1;i++)
+        // {
+        //     for(auto it:edges)
+        //     {
+        //         int u=it[0];
+        //         int v=it[1];
+        //         int wt=1;
+        //         if(dis2[u]!=1e8 && dis2[u]+wt<dis2[v])
+        //         {
+        //             dis2[v]=dis2[u]+wt;
+        //         }
+        //         if(dis2[v]!=1e8 && dis2[v]+wt<dis2[u])
+        //         {
+        //             dis2[u]=dis2[v]+wt;
+        //         }
+        //     }
+        // }
+        
+        // for(int i=0;i<n;i++)
+        // {
+        //     cout<<dis[i]<<" "<<dis2[i]<<endl;
+        // }
+
+        int ans=0;
+        for(int i=1;i<n;i++)
+        {
+            int curr_dis=dis[i]*2;
+            if(curr_dis%patience[i]==0)
+            {
+                int temp=curr_dis*2+1-patience[i];
+                ans=max(ans,temp);
+            }
+            else
+            {
+                int temp=curr_dis*2+1-curr_dis%patience[i];
+                ans=max(ans,temp);
+            }
+        }
+        return ans;
+
+
+
         // int ans=0;
         // for(int i=1;i<n;i++)
         // {
@@ -52,26 +97,5 @@ public:
         //     int temp=2*dis[i]+last+1;
         //     ans=max(ans,temp);
         // }
-        for(auto &i:dis)
-        {
-            i*=2;
-        }
-        int ans=0;
-        for(int i=1;i<n;i++)
-        {
-            int curr_dis=dis[i];
-            if(curr_dis%patience[i]==0)
-            {
-                int temp=curr_dis*2+1-patience[i];
-                ans=max(ans,temp);
-            }
-            else
-            {
-                int temp=curr_dis*2+1-curr_dis%patience[i];
-                ans=max(ans,temp);
-            }
-        }
-
-        return ans;
     }
 };
