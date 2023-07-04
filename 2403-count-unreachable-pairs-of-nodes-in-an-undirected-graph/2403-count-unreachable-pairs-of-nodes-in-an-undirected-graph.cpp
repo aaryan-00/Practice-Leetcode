@@ -19,10 +19,10 @@ public:
         b = find(b);
         if (a != b)
         {
-            // if (sizes[b] > sizes[a])
-            // {
-            //     swap(b, a);
-            // }
+            if (sizes[b] > sizes[a])
+            {
+                swap(b, a);
+            }
             if(b<a)
             {
                 swap(a,b);
