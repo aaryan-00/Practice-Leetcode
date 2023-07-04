@@ -66,6 +66,9 @@ public:
             //     ans+=curr_sz*tot_sz;
             //     parents.insert(curr_par);
             // }
+
+            // or
+            
             if(find(i)==i)
             {
                 long long curr_sz=sizes[i];
