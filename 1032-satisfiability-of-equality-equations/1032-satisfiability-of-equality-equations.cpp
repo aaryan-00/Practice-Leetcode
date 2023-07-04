@@ -1,11 +1,11 @@
 class Solution {
 public:
     vector<int> par;
-    vector<int> sizes;
+    // vector<int> sizes;
     void make(int v)
     {
         par[v] = v;
-        sizes[v] = 1;
+        // sizes[v] = 1;
     }
     int find(int v)
     {
@@ -19,17 +19,17 @@ public:
         b = find(b);
         if (a != b)
         {
-            if (sizes[b] > sizes[a])
-            {
-                swap(b, a);
-            }
+            // if (sizes[b] > sizes[a])
+            // {
+            //     swap(b, a);
+            // }
             par[b] = a;
-            sizes[a] += sizes[b];
+            // sizes[a] += sizes[b];
         }
     }
     bool equationsPossible(vector<string>& equations) {
         par.resize(26);
-        sizes.resize(26);
+        // sizes.resize(26);
         for(int i=0;i<26;i++)
         {
             make(i);
