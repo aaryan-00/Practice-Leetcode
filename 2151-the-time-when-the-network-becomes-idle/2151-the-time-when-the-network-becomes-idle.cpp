@@ -100,7 +100,7 @@ public:
 //     }
 
 
-
+//bfs
     int networkBecomesIdle(vector<vector<int>>& edges, vector<int>& patience) {
         int n = patience.size();
         vector <vector <int>> graph(n);
