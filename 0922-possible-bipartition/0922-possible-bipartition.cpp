@@ -22,15 +22,26 @@ public:
                     q.pop();
                     for(auto it:adj[node])
                     {
-                        if(col[it]==-1)
-                        {
-                            q.push(it);
-                            col[it]=1-col[node];
-                        }
-                        else if(col[it]==col[node])
+                        // if(col[it]==-1)
+                        // {
+                        //     q.push(it);
+                        //     col[it]=1-col[node];
+                        // }
+                        // else if(col[it]==col[node])
+                        // {
+                        //     return false;
+                        // }
+
+                        if(col[it]==col[node])
                         {
                             return false;
                         }
+                        if(col[it]==-1)
+                        {
+                            q.push(it);
+                            col[it]=!col[node];
+                        }
+                        
                         
                     }
                 }
