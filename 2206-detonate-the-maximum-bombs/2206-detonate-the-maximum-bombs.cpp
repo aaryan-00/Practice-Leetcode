@@ -3,7 +3,6 @@ public:
     int temp;
     void dfs(vector<vector<int>> &adj,vector<bool> &detonated,int src)
     {
-        if(detonated[src]) return;
         detonated[src]=true;
         temp++;
         for(auto it:adj[src])
@@ -35,15 +34,6 @@ public:
                 }  
             }
         }        
-        // for(int i=0;i<n;i++)
-        // {
-        //     cout<<i<<":";
-        //     for(auto it:adj[i])
-        //     {
-        //         cout<<it<<" ";
-        //     }
-        //     cout<<endl;
-        // }
         int ans=0;
         for(int i=0;i<n;i++)
         {
@@ -51,6 +41,7 @@ public:
             vector<bool> detonated(n);
             dfs(adj,detonated,i);
             ans=max(ans,temp);
+            if(ans==n) return n;
         }
         
         return ans;
