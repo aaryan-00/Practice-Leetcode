@@ -8,6 +8,7 @@ public:
         {
             return true;
         }
+        
         for(auto i:adj[src])
         {
             if(!vis[i])
@@ -20,6 +21,7 @@ public:
         }
         steps[src]=-1;
         return false;
+        
     }
     int ans=INT_MIN;
     void dfs(int src,vector<int> adj[],vector<bool> &vis,vector<int>& amount,int time,vector<int> &steps,int cost)
@@ -53,14 +55,14 @@ public:
             adj[u].push_back(v);
             adj[v].push_back(u);
         }
-        vector<int> steps(n,1e8);
+        vector<int> steps(n,-1);
         vector<bool> vis(n,false); 
         find_steps(bob,adj,vis,0,steps);
-        for(auto i:steps)
-        {
-            cout<<i<<" ";
-        }
-        cout<<endl;
+        // for(auto i:steps)
+        // {
+        //     cout<<i<<" ";
+        // }
+        // cout<<endl;
         vector<bool> vis2(n,false); 
         dfs(0,adj,vis2,amount,0,steps,0);
         return ans;
