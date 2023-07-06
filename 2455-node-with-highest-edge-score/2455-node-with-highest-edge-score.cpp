@@ -1,6 +1,9 @@
 class Solution {
 public:
     int edgeScore(vector<int>& edges) {
+        ios_base::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
         int n=edges.size();
         vector<long long> score(n,0);
         for(int i=0;i<n;i++)
