@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool dfs(int src, vector<int> adj[],vector<bool> &vis, int time,vector<int> &steps)
+    bool find_steps(int src, vector<int> adj[],vector<bool> &vis, int time,vector<int> &steps)
     {
         vis[src]=true;
         steps[src]=time;
@@ -12,7 +12,7 @@ public:
         {
             if(!vis[i])
             {
-                if(dfs(i,adj,vis,time+1,steps))
+                if(find_steps(i,adj,vis,time+1,steps))
                 {
                     return true;
                 }
@@ -22,7 +22,7 @@ public:
         return false;
     }
     int ans=INT_MIN;
-    void dfs2(int src,vector<int> adj[],vector<bool> &vis,vector<int>& amount,int time,vector<int> &steps,int cost)
+    void dfs(int src,vector<int> adj[],vector<bool> &vis,vector<int>& amount,int time,vector<int> &steps,int cost)
     {
         if(time<steps[src]||steps[src]==-1)
         {
@@ -40,7 +40,7 @@ public:
         {
             if(!vis[i])
             {
-                dfs2(i,adj,vis,amount,time+1,steps,cost);
+                dfs(i,adj,vis,amount,time+1,steps,cost);
             }
         }
     }
@@ -55,14 +55,14 @@ public:
         }
         vector<int> steps(n,-1);
         vector<bool> vis(n,false); 
-        dfs(bob,adj,vis,0,steps);
+        find_steps(bob,adj,vis,0,steps);
         // for(auto i:steps)
         // {
         //     cout<<i<<" ";
         // }
         // cout<<endl;
         vector<bool> vis2(n,false); 
-        dfs2(0,adj,vis2,amount,0,steps,0);
+        dfs(0,adj,vis2,amount,0,steps,0);
         return ans;
 
         
