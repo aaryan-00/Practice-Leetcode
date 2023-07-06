@@ -11,18 +11,33 @@ public:
         vector<int> inDegree(n,0);
         int root=-1;
         for(int i=0;i<leftChild.size();i++)
-            if(leftChild[i]!=-1&&inDegree[leftChild[i]]++==1)
-                return false;
-            else if(rightChild[i]!=-1&&inDegree[rightChild[i]]++==1)
-                return false;
-        for(int i=0;i<leftChild.size();i++)
-            if(inDegree[i]==0)
-                if(root==-1)
-                    root=i;
-                else
+        {
+            if(leftChild[i]!=-1)
+            {
+                inDegree[leftChild[i]]++;
+                if(inDegree[leftChild[i]]>1)
+                {
                     return false;
-        if(root==-1)
-            return false;
+                }
+            }  
+            if(rightChild[i]!=-1)
+            {
+                inDegree[rightChild[i]]++;
+                if(inDegree[rightChild[i]]>1)
+                {
+                    return false;
+                }
+            }
+        }
+        for(int i=0;i<leftChild.size();i++)
+        {
+            if(inDegree[i]==0)
+            {
+                if(root==-1)root=i;
+                else return false;
+            }
+        }
+        if(root==-1)return false;
         return countNodes(leftChild,rightChild,root)==n;
     }
 };
