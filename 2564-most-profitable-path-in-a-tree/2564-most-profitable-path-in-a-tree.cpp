@@ -32,7 +32,7 @@ public:
         {
             cost+=amount[src]/2;
         }
-        cout<<src<<" "<<cost<<endl;
+        // cout<<src<<" "<<cost<<endl;
         
         vis[src]=true;
         if(adj[src].size()==1 && src!=0) ans=max(ans,cost);
@@ -56,11 +56,11 @@ public:
         vector<int> steps(n,-1);
         vector<bool> vis(n,false); 
         dfs(bob,adj,vis,0,steps);
-        for(auto i:steps)
-        {
-            cout<<i<<" ";
-        }
-        cout<<endl;
+        // for(auto i:steps)
+        // {
+        //     cout<<i<<" ";
+        // }
+        // cout<<endl;
         vector<bool> vis2(n,false); 
         dfs2(0,adj,vis2,amount,0,steps,0);
         return ans;
