@@ -38,29 +38,6 @@ public:
 
         } 
         return dis;
-
-
-        //         vector<int> dist(n,-1); 
-        
-        // queue<vector<int>> q;
-        // q.emplace(vector<int>{0,0,-1});
-        
-        // while(!q.empty()) {
-        //     auto front = q.front();
-        //     q.pop();
-        //     dist[front[0]] = dist[front[0]] != -1 ? dist[front[0]] : front[1];
-            
-        //     for(auto &i : adj[front[0]]) {
-		// 		//Push the node to the queue only if the next edge color is different from the pervious edge color and also if we are visiting the edge
-		// 		//for the first time.
-        //         if(front[2] != i.second && i.first!= -1) {
-        //             q.emplace(vector<int>{i.first, front[1] + 1, i.second});
-		// 			//Update the value in the adjacency matrix to -1 to denote that the node has already been visited.
-        //             i.first = -1;
-        //         }
-        //     }
-        // }
-        // return dist;
     }
 
 };
