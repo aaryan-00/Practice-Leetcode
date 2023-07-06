@@ -10,7 +10,8 @@ public:
         {
             score[edges[i]]+=i;
         }
-        long long sum=0,ind=0;
+        long long sum=0;
+        int ind=0;
         for(int i=0;i<n;i++)
         {
             if(sum<score[i])
