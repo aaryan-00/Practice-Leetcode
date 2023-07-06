@@ -53,14 +53,14 @@ public:
             adj[u].push_back(v);
             adj[v].push_back(u);
         }
-        vector<int> steps(n,-1);
+        vector<int> steps(n,1e8);
         vector<bool> vis(n,false); 
         find_steps(bob,adj,vis,0,steps);
-        // for(auto i:steps)
-        // {
-        //     cout<<i<<" ";
-        // }
-        // cout<<endl;
+        for(auto i:steps)
+        {
+            cout<<i<<" ";
+        }
+        cout<<endl;
         vector<bool> vis2(n,false); 
         dfs(0,adj,vis2,amount,0,steps,0);
         return ans;
