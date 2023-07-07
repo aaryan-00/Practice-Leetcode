@@ -2,16 +2,6 @@ class Solution {
 public:
     vector<string> watchedVideosByFriends(vector<vector<string>>& watchedVideos, vector<vector<int>>& friends, int id, int level) {
         int n=watchedVideos.size();
-        // vector<int> adj[n];
-        // for(int i=0;i<n;i++)
-        // {
-        //     for(auto it:friends[i])
-        //     {
-        //         adj[i].push_back(it);
-        //         adj[it].push_back(i);
-        //     }
-        // }
-
         vector<int> dis(n,-1);
         queue<int> q;
         q.push(id);
@@ -42,13 +32,11 @@ public:
                 }
             }
         }
-        // vector<pair<int,string>> temp;
         set<pair<int,string>> temp;
         for(auto i:mp)
         {
             temp.insert({i.second,i.first});
         }
-        // sort(temp.begin(),temp.end());
         vector<string> ans;
         for(auto i:temp)
         {
