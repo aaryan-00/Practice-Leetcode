@@ -42,12 +42,13 @@ public:
                 }
             }
         }
-        vector<pair<int,string>> temp;
+        // vector<pair<int,string>> temp;
+        set<pair<int,string>> temp;
         for(auto i:mp)
         {
-            temp.push_back({i.second,i.first});
+            temp.insert({i.second,i.first});
         }
-        sort(temp.begin(),temp.end());
+        // sort(temp.begin(),temp.end());
         vector<string> ans;
         for(auto i:temp)
         {
