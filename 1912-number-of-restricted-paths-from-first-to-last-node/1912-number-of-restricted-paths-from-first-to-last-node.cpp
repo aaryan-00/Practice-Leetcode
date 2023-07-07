@@ -39,8 +39,7 @@ public:
             int node=i.first;
             if(dis[node]>dis[src])
             {
-                curr+=dfs(adj,node,dis,cnt);
-                curr%=m;
+                curr=(curr+dfs(adj,node,dis,cnt))%m;
             }
         }
         return cnt[src]=curr%m;
