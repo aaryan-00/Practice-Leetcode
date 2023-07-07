@@ -1,24 +1,24 @@
 class Solution {
 public:
-    // void bfs(vector<int> adj[],int src,vector<int> &dis)
-    // {
-    //     queue<int> q;
-    //     q.push(src);
-    //     dis[src]=0;
-    //     while(!q.empty())
-    //     {
-    //         int node=q.front();
-    //         q.pop();
-    //         for(auto it:adj[node])
-    //         {
-    //             if(dis[it]==-1)
-    //             {
-    //                 dis[it]=dis[node]+1;
-    //                 q.push(it);
-    //             }
-    //         }
-    //     }
-    // }
+    void bfs(vector<int> adj[],int src,vector<int> &dis)
+    {
+        queue<int> q;
+        q.push(src);
+        dis[src]=0;
+        while(!q.empty())
+        {
+            int node=q.front();
+            q.pop();
+            for(auto it:adj[node])
+            {
+                if(dis[it]==-1)
+                {
+                    dis[it]=dis[node]+1;
+                    q.push(it);
+                }
+            }
+        }
+    }
     void bfs2(vector<int>& edges,int src,vector<int> &dis)
     {
         queue<int> q;
@@ -53,19 +53,13 @@ public:
         // vector<int> dis2(n,-1);
         // bfs(adj,node2,dis2);
 
+// or
         vector<int> dis1(n,-1);
         bfs2(edges,node1,dis1);
         vector<int> dis2(n,-1);
         bfs2(edges,node2,dis2);
-        // for(auto i:dis1)
-        // {
-        //     cout<<i<<" ";
-        // }
-        // cout<<endl;
-        // for(auto i:dis2)
-        // {
-        //     cout<<i<<" ";
-        // }
+
+
         int ans=INT_MAX;
         int node=-1;
         for(int i=0;i<n;i++)
