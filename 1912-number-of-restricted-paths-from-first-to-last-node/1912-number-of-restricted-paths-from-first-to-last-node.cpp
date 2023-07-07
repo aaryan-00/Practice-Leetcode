@@ -11,8 +11,9 @@ public:
         {
             pair<int,int> curr=pq.top();
             pq.pop();
-            // int Dis=curr.first;
+            int Dis=curr.first;
             int node=curr.second;
+            if(Dis>dis[node]) continue;
             for(auto i:adj[node])
             {
                 int next=i[0];
@@ -35,16 +36,15 @@ public:
         // ans%=m;
         if(src==dis.size()-1) return 1;
         if(cnt[src]!=-1) return cnt[src];
-        int curr=0;
+        long curr=0;
         for(auto i:adj[src])
         {
-            int node=i[0];
+            long node=i[0];
             if(dis[node]<dis[src])
             {
                 // cnt[node]+=1;
                 // cnt[node]%=m;
-                curr+=dfs(adj,node,dis);
-                curr%=m;
+                curr=(curr+dfs(adj,node,dis))%m;
             }
         }
         return cnt[src]=curr%m;
@@ -60,10 +60,6 @@ public:
             adj[v].push_back({u,wt});
         }
         vector<long> dis=dijkstra(n, adj,n-1);
-        // for(auto i:dis)
-        // {
-        //     cout<<i<<" ";
-        // }
         cnt.resize(n,-1);
         // cnt[0]=1;
         dfs(adj,0,dis);
