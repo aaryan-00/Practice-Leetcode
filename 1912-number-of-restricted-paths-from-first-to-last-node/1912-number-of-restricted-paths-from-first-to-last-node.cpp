@@ -14,7 +14,7 @@ public:
             int Dis=curr.first;
             int node=curr.second;
             if(Dis>dis[node]) continue;
-            for(auto &i:adj[node])
+            for(auto i:adj[node])
             {
                 int next=i.first;
                 int next_dis=i.second;
@@ -35,7 +35,7 @@ public:
         if(src==0) return 1;
         if(cnt[src]!=-1) return cnt[src];
         int curr=0;
-        for(auto &i:adj[src])
+        for(auto i:adj[src])
         {
             int node=i.first;
             if(dis[node]>dis[src])
