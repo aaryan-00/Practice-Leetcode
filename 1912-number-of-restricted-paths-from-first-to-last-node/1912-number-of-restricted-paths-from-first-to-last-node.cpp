@@ -34,13 +34,13 @@ public:
     {
         // if(src==dis.size()-1) ans++;
         // ans%=m;
-        if(src==dis.size()-1) return 1;
+        if(src==0) return 1;
         if(cnt[src]!=-1) return cnt[src];
         long curr=0;
         for(auto i:adj[src])
         {
             long node=i[0];
-            if(dis[node]<dis[src])
+            if(dis[node]>dis[src])
             {
                 // cnt[node]+=1;
                 // cnt[node]%=m;
@@ -62,13 +62,13 @@ public:
         vector<long> dis=dijkstra(n, adj,n-1);
         cnt.resize(n,-1);
         // cnt[0]=1;
-        dfs(adj,0,dis);
+        dfs(adj,n-1,dis);
         // for(auto i:cnt)
         // {
         //     cout<<i<<" ";
         // }
         // cout<<endl;
-        return cnt[0];
+        return cnt[n-1];
         
     }
 };
