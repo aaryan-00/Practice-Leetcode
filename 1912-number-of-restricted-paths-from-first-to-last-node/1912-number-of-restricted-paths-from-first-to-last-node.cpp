@@ -29,7 +29,6 @@ public:
 
     }
 
-    // int ans=0;
     int dfs(vector<vector<pair<int,int>>> &adj,int src,vector<int> &dis,vector<int> &cnt)
     {
         if(src==0) return 1;
@@ -40,7 +39,8 @@ public:
             int node=i.first;
             if(dis[node]>dis[src])
             {
-                curr=(curr+dfs(adj,node,dis,cnt))%m;
+                curr+=dfs(adj,node,dis,cnt);
+                curr%=m;
             }
         }
         return cnt[src]=curr%m;
@@ -63,30 +63,6 @@ public:
         //     cout<<i<<" ";
         // }
         // cout<<endl;
-        return cnt[n-1];
-        
+        return cnt[n-1];   
     }
-
-
-    //     vector<long> cnt;
-    // // int ans=0;
-    // int dfs(vector<vector<int>> adj[],int src,vector<long> &dis)
-    // {
-    //     // if(src==dis.size()-1) ans++;
-    //     // ans%=m;
-    //     if(src==0) return 1;
-    //     if(cnt[src]!=-1) return cnt[src];
-    //     long curr=0;
-    //     for(auto i:adj[src])
-    //     {
-    //         long node=i[0];
-    //         if(dis[node]>dis[src])
-    //         {
-    //             // cnt[node]+=1;
-    //             // cnt[node]%=m;
-    //             curr=(curr+dfs(adj,node,dis))%m;
-    //         }
-    //     }
-    //     return cnt[src]=curr%m;
-    // }
 };
