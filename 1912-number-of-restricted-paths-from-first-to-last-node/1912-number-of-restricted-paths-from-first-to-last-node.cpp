@@ -11,9 +11,8 @@ public:
         {
             pair<int,int> curr=pq.top();
             pq.pop();
-            int Dis=curr.first;
             int node=curr.second;
-            if(Dis>dis[node]) continue;
+            if(curr.first>dis[node]) continue;
             for(auto i:adj[node])
             {
                 int next=i.first;
