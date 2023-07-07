@@ -2,15 +2,15 @@ class Solution {
 public:
     vector<string> watchedVideosByFriends(vector<vector<string>>& watchedVideos, vector<vector<int>>& friends, int id, int level) {
         int n=watchedVideos.size();
-        vector<int> adj[n];
-        for(int i=0;i<n;i++)
-        {
-            for(auto it:friends[i])
-            {
-                adj[i].push_back(it);
-                adj[it].push_back(i);
-            }
-        }
+        // vector<int> adj[n];
+        // for(int i=0;i<n;i++)
+        // {
+        //     for(auto it:friends[i])
+        //     {
+        //         adj[i].push_back(it);
+        //         adj[it].push_back(i);
+        //     }
+        // }
 
         vector<int> dis(n,-1);
         queue<int> q;
@@ -21,7 +21,7 @@ public:
             int node=q.front();
             q.pop();
             // cout<<node<<endl;
-            for(auto it:adj[node])
+            for(auto it:friends[node])
             {
                 if(dis[it]==-1)
                 {
