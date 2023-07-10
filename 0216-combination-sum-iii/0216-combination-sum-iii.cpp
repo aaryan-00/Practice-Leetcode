@@ -11,6 +11,7 @@ public:
         }
         for(int i=ind;i<10;i++)
         {
+            if(i>target) break;
             temp.push_back(i);
             combi(k,i+1,target-i);
             temp.pop_back();
