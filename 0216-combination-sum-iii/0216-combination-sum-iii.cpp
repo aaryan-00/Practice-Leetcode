@@ -9,10 +9,6 @@ public:
             ans.push_back(temp);
             return;
         }
-        if(ind>9)
-        {
-            return;
-        }
         for(int i=ind;i<10;i++)
         {
             temp.push_back(i);
