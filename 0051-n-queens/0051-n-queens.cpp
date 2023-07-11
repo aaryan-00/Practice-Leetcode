@@ -42,12 +42,9 @@ public:
         ans.clear();
         temp.resize(n);
         string curr(n,'.');
-        // for(auto &i:temp)
-        // {
-        //     i=curr;
-        // }
-        for (int i = 0; i < n; i++) {
-            temp[i] = curr;
+        for(auto &i:temp)
+        {
+            i=curr;
         }
         solve(0,n);
         return ans;
