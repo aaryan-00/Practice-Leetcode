@@ -4,11 +4,12 @@ public:
     vector<vector<bool>> vis;
     bool getcombi(vector<vector<char>>& board,string &word,int w_ind,int row,int col)
     {
-        if(w_ind==word.size()) return true;
+        // if(w_ind==word.size()) return true;
         if(row>=n||col>=m) return false;
         if(row<0||col<0) return false;
         if(board[row][col]==word[w_ind] && vis[row][col]==false)
         {
+            if(w_ind==word.size()-1) return true;
             vis[row][col]=true;
             if(getcombi(board,word,w_ind+1,row+1,col))
             {
