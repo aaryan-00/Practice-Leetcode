@@ -19,7 +19,16 @@ public:
         bool righti=check(root->right,root->val,maxi);
         return lefti && righti;
     }
+    // bool isValidBST(TreeNode* root) {
+    //     return check(root,LONG_MIN,LONG_MAX);
+    // }
+
+    TreeNode* pre=NULL;
     bool isValidBST(TreeNode* root) {
-        return check(root,LONG_MIN,LONG_MAX);
+        if (root == nullptr) return true;
+        if (!isValidBST(root->left)) return false;
+        if (pre != nullptr && pre->val >= root->val) return false;
+        pre = root;
+        return isValidBST(root->right);
     }
 };
