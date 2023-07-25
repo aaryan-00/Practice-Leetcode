@@ -46,12 +46,12 @@ public:
         n=long(abs(n));
         while(n)
         {
-            if(n&1)
+            if(n%2)
             {
                 res*=x;
             }
             x*=x;
-            n/=2;
+            n/=2;  
         }
         return res;
     }
