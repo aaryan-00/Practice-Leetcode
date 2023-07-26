@@ -18,7 +18,7 @@ public:
         while(mini<=maxi)
         {
             int mid=mini+maxi>>1;
-            cout<<mini<<" "<<maxi<<" "<<mid<<endl;
+            // cout<<mini<<" "<<maxi<<" "<<mid<<endl;
             if(check(dist,mid,hour))
             {
                 ans=mid;
