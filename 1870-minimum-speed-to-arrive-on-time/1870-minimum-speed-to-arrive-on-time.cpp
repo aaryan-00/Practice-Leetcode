@@ -13,6 +13,9 @@ public:
         return hrs<=hour;
     }
     int minSpeedOnTime(vector<int>& dist, double hour) {
+        if (dist.size() > ceil(hour)) {
+            return -1;
+        }
         int ans=-1;
         int mini=1,maxi=1e7;
         while(mini<=maxi)
