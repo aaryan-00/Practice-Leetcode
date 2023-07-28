@@ -39,9 +39,7 @@ public:
     }
     bool PredictTheWinner(vector<int>& nums) {
         int n=nums.size();
-        dp.resize(n , vector<int>(n , -1));
-        int ans=getAns(nums,0,n-1,1);
-        cout<<ans<<endl;
-        return ans>=0;
+        dp.resize(n,vector<int>(n,-1));
+        return getAns(nums,0,n-1,1)>=0;
     }
 };
