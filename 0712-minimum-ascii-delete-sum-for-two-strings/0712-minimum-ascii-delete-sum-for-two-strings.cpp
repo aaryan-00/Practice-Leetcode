@@ -24,22 +24,11 @@ public:
                 }
             }
         }
-
-        for(int i=0;i<=n;i++)
-        {
-            for(int j=0;j<=m;j++)
-            {
-                cout<<dp[i][j]<<" ";
-            }
-            cout<<endl;
-        }
         int ans=0;
         for(auto i:s)
         {
             ans+=((int)i);
         }
-        // ans-=dp[n][m];
-        // cout<<ans<<endl;
         for(auto i:t)
         {
             ans+=((int)i);
