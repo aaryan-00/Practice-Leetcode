@@ -4,7 +4,6 @@ public:
     vector<int> temp;
     void getCombi(int ind,int n,int k)
     {
-        // if(ind>n) return;
         if(temp.size()==k)
         {
             ans.push_back(temp);
