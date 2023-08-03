@@ -9,7 +9,6 @@ public:
             if(s[i]==')' && st.size()>0)
             {
                 char curr=st.top();
-                cout<<curr<<endl;
                 if(curr=='(')
                 {
                     st.pop();
