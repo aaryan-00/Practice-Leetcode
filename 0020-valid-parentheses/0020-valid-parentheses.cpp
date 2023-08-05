@@ -17,6 +17,6 @@ public:
                 temp.push(s[i]);
             }
         }
-        return temp.size()==0;
+        return temp.empty();
     }
 };
