@@ -4,38 +4,28 @@ public:
         stack<int> st;
         for(auto i:tokens)
         {
-            // string curr=i;
-            if(i=="+")
+            if(i=="+" || i=="-" || i=="*" || i=="/")
             {
                 int b=st.top();
                 st.pop();
                 int a=st.top();
                 st.pop();
-                st.push(a+b);
-            }
-            else if(i=="-")
-            {
-                int b=st.top();
-                st.pop();
-                int a=st.top();
-                st.pop();
-                st.push(a-b);
-            }
-            else if(i=="*")
-            {
-                int b=st.top();
-                st.pop();
-                int a=st.top();
-                st.pop();
-                st.push(a*b);
-            }
-            else if(i=="/")
-            {
-                int b=st.top();
-                st.pop();
-                int a=st.top();
-                st.pop();
-                st.push(a/b);
+                if(i=="+")
+                {
+                    st.push(a+b);
+                }
+                else if(i=="-")
+                {
+                    st.push(a-b);
+                }
+                else if(i=="*")
+                {
+                    st.push(a*b);
+                }
+                else
+                {
+                    st.push(a/b);
+                } 
             }
             else
             {
