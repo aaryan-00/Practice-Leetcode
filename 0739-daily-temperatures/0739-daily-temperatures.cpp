@@ -8,7 +8,6 @@ public:
         for(int i=1;i<n;i++)
         {
             int curr=temperatures[i];
-            // cout<<curr<<endl;
             while(!st.empty() && curr>st.top().first)
             {
                 ans[st.top().second]=i-st.top().second;
