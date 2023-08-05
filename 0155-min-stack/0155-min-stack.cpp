@@ -23,7 +23,7 @@ public:
 
     vector<pair<int,int>> v;
     MinStack() {
-        v.clear();
+        // v.clear();
     }
     
     void push(int val) {
