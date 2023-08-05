@@ -1,7 +1,8 @@
 class Solution {
 public:
     vector<string> ans;
-    void getAns(int i,int open,string temp)
+    string temp="";
+    void getAns(int i,int open)
     {
         if(i==0)
         {
@@ -10,17 +11,23 @@ public:
         }
         if(open>0)
         {
-            getAns(i-1,open+1,temp+'(');
-            getAns(i-1,open-1,temp+')');
+            temp+='(';
+            getAns(i-1,open+1);
+            temp.pop_back();
+            temp+=')';
+            getAns(i-1,open-1);
+            temp.pop_back();
         }
         else
         {
-            getAns(i-1,open+1,temp+'(');
+            temp+='(';
+            getAns(i-1,open+1);
+            temp.pop_back();
         }
     }
     vector<string> generateParenthesis(int n) {
         ans.clear();
-        getAns(2*n,0,"");
+        getAns(2*n,0);
         return ans;
     }
 };
