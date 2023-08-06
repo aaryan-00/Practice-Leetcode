@@ -13,6 +13,7 @@ public:
                 vis[i]=false;
             }
         }
+        // cout<<ind<<" "<<ans<<endl;
         return ans;
     }
     int countArrangement(int n) {
