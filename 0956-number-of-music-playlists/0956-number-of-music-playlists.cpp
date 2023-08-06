@@ -14,12 +14,8 @@ public:
         if(dp[n][goal]!=-1) return dp[n][goal];
         //newSong
         long long pick=getAns(n-1,goal-1,k,dp)*n;
-        // ans%=m;
         // old song
-        // if(n>k)
-        // {
         long long notpick=getAns(n,goal-1,k,dp)*max(0,n-k);
-        // } 
         return dp[n][goal]=(pick+notpick)%m;
 
     }
