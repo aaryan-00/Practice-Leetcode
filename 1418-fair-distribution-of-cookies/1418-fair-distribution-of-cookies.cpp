@@ -16,6 +16,9 @@ public:
         }
         for(int i=0;i<k;i++)
         {
+            if(i > 0 and sum[i] == sum[i-1]) continue;
+            if(sum[i] + cookies[ind] >= ans) continue;
+            
             sum[i]+=cookies[ind];
             getAns(cookies,ind+1,k);
             sum[i]-=cookies[ind];
