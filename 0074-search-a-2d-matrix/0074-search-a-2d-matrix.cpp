@@ -32,7 +32,6 @@ public:
             if(matrix[mid][0]<=target) lo=mid+1;
             else hi=mid-1;
         }
-        cout<<hi<<endl;
         if(hi<0) return false;
         int i=hi;
         lo=0,hi=matrix[0].size()-1;
