@@ -29,9 +29,11 @@ public:
         while(lo<=hi)
         {
             int mid= hi+lo >>1;
-            if(matrix[mid][0]<=target) lo=mid+1;
+            if(matrix[mid][0]==target) return true;
+            else if(matrix[mid][0]<target) lo=mid+1;
             else hi=mid-1;
         }
+        cout<<hi<<endl;
         if(hi<0) return false;
         int i=hi;
         lo=0,hi=matrix[0].size()-1;
