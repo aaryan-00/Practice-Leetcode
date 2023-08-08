@@ -22,7 +22,7 @@ public:
         {
             for(int j=0;j<m;j++)
             {
-                if(grid2[i][j]==1 && grid2[i][j]==grid1[i][j])
+                if(grid2[i][j]==1)
                 {
                     bool check=true;
                     // cout<<i<<" "<<j<<" ";
