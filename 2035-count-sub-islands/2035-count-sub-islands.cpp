@@ -22,12 +22,12 @@ public:
         {
             for(int j=0;j<m;j++)
             {
-                if(grid2[i][j]==1)
+                if(grid2[i][j]==1 && grid2[i][j]==grid1[i][j])
                 {
                     bool check=true;
-                    cout<<i<<" "<<j<<" ";
+                    // cout<<i<<" "<<j<<" ";
                     dfs(grid1,grid2,check,i,j);
-                    cout<<check<<endl;
+                    // cout<<check<<endl;
                     ans+=check;
                 }
                 
