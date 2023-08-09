@@ -39,8 +39,8 @@ public:
         int n=mat.size();
         int m=mat[0].size();
         cout<<n<<m<<endl;
-        vector<vector<int>> bluelake(n,vector<int>(m,-1));
-        vector<vector<int>> redlake(n,vector<int>(m,-1));
+        vector<vector<int>> bluelake(n,vector<int>(m,0));
+        vector<vector<int>> redlake(n,vector<int>(m,0));
         for(int i=0;i<n;i++)
         {
             bluelake[i][0]=1;
