@@ -56,7 +56,13 @@ public:
                 if(grid[i][j]==1) 
                 {
                     q.push({i,j});
+                    grid[i][j]=0;
                 }
+                else
+                {
+                    grid[i][j]=-1;
+                }
+
             }
         }
         if(q.size()==0 || q.size()==n*m) return -1;
@@ -74,9 +80,9 @@ public:
                 {
                     int nextI=i+paths[curr];
                     int nextJ=j+paths[curr+1];
-                    if(nextI>=0 && nextI<n && nextJ>=0 && nextJ<m && grid[nextI][nextJ]==0)
+                    if(nextI>=0 && nextI<n && nextJ>=0 && nextJ<m && grid[nextI][nextJ]==-1)
                     {
-                        grid[nextI][nextJ]=1;
+                        grid[nextI][nextJ]=level;
                         q.push({nextI,nextJ});
                     }
                 }
