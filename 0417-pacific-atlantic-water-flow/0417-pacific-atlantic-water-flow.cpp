@@ -1,10 +1,9 @@
 class Solution {
 public:
-    
+    vector<vector<int>> paths{ {0,-1}, {1, 0}, {0, 1}, {-1, 0} };
     void dfs(vector<vector<int>> &lake,vector<vector<int>> &mat,int i,int j,int n,int m)
     {
-        vector<int> path={-1,0,1,0,-1};
-        vector<vector<int>> paths{ {0,-1}, {1, 0}, {0, 1}, {-1, 0} };
+        // vector<int> path={-1,0,1,0,-1}; 
         for(int curr=0;curr<4;curr++)
         {
             int nextI=i+paths[curr][0];
