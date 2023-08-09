@@ -1,8 +1,9 @@
 class Solution {
 public:
-    vector<vector<int>> paths{ {0,-1}, {1, 0}, {0, 1}, {-1, 0} };
+    // vector<vector<int>> paths{ {0,-1}, {1, 0}, {0, 1}, {-1, 0} };
+    int n,m;
     vector<int> path={-1,0,1,0,-1}; 
-    void dfs(vector<vector<int>> &lake,vector<vector<int>> &mat,int i,int j,int n,int m)
+    void dfs(vector<vector<int>> &lake,vector<vector<int>> &mat,int i,int j)
     {
 
          for(int curr=0;curr<4;curr++)
@@ -12,7 +13,7 @@ public:
             if(nextI>=0 && nextI<n && nextJ>=0 && nextJ<m && lake[nextI][nextJ]==0 && mat[nextI][nextJ]>=mat[i][j])
             {
                 lake[nextI][nextJ]=1;
-                dfs(lake,mat,nextI,nextJ,n,m);
+                dfs(lake,mat,nextI,nextJ);
             }
         }
         
@@ -27,13 +28,13 @@ public:
         //     if(mat[nextI][nextJ]>=mat[i][j])
         //     {
         //         lake[nextI][nextJ]=1;
-        //         dfs(lake,mat,nextI,nextJ,n,m);
+        //         dfs(lake,mat,nextI,nextJ);
         //     }
         // }
     }
     vector<vector<int>> pacificAtlantic(vector<vector<int>>& mat) {
-        int n=mat.size();
-        int m=mat[0].size();
+        n=mat.size();
+        m=mat[0].size();
         cout<<n<<m<<endl;
         vector<vector<int>> bluelake(n,vector<int>(m,0));
         vector<vector<int>> redlake(n,vector<int>(m,0));
@@ -53,11 +54,11 @@ public:
             {
                 if(bluelake[i][j]==1)
                 {
-                    dfs(bluelake,mat,i,j,n,m);
+                    dfs(bluelake,mat,i,j);
                 }
                 if(redlake[i][j]==1)
                 {
-                    dfs(redlake,mat,i,j,n,m);
+                    dfs(redlake,mat,i,j);
                 }
             }
         }
