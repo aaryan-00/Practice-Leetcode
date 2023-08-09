@@ -41,24 +41,24 @@ public:
         cout<<n<<m<<endl;
         vector<vector<int>> bluelake(n,vector<int>(m,-1));
         vector<vector<int>> redlake(n,vector<int>(m,-1));
-        // for(int i=0;i<n;i++)
-        // {
-        //     bluelake[i][0]=1;
-        //     redlake[i][m-1]=1;
-        // }
-        // for(int j=0;j<m;j++)
-        // {
-        //     bluelake[0][j]=1;
-        //     redlake[n-1][j]=1;
-        // }
-          for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (i == 0 || j == 0)
-                    bluelake[i][j] = 1;
-                if (i == n-1 || j == m-1)
-                    redlake[i][j] = 1;
-            }
+        for(int i=0;i<n;i++)
+        {
+            bluelake[i][0]=1;
+            redlake[i][m-1]=1;
         }
+        for(int j=0;j<m;j++)
+        {
+            bluelake[0][j]=1;
+            redlake[n-1][j]=1;
+        }
+        //   for (int i = 0; i < n; i++) {
+        //     for (int j = 0; j < m; j++) {
+        //         if (i == 0 || j == 0)
+        //             bluelake[i][j] = 1;
+        //         if (i == n-1 || j == m-1)
+        //             redlake[i][j] = 1;
+        //     }
+        // }
         for(int i=0;i<n;i++)
         {
             for(int j=0;j<m;j++)
