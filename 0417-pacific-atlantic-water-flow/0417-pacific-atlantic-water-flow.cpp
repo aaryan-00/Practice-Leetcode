@@ -3,7 +3,7 @@ public:
     // vector<vector<int>> paths{ {0,-1}, {1, 0}, {0, 1}, {-1, 0} };
     int n,m;
     vector<int> path={-1,0,1,0,-1}; 
-    void dfs(vector<vector<int>> &lake,vector<vector<int>> &mat,int i,int j)
+    void dfs(vector<vector<bool>> &lake,vector<vector<int>> &mat,int i,int j)
     {
 
          for(int curr=0;curr<4;curr++)
@@ -36,8 +36,8 @@ public:
         n=mat.size();
         m=mat[0].size();
         cout<<n<<m<<endl;
-        vector<vector<int>> bluelake(n,vector<int>(m,0));
-        vector<vector<int>> redlake(n,vector<int>(m,0));
+        vector<vector<bool>> bluelake(n,vector<bool>(m,0));
+        vector<vector<bool>> redlake(n,vector<bool>(m,0));
         for(int i=0;i<n;i++)
         {
             bluelake[i][0]=1;
