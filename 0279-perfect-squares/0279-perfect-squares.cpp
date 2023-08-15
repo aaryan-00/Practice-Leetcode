@@ -21,7 +21,7 @@ public:
     }
     int numSquares(int n) {
         int sq=sqrt(n);
-        dp.resize(n+1,-1);
+        dp.resize(n,-1);
         return getAns(n,sq,0);
     }
 };
