@@ -19,14 +19,15 @@ public:
         vector<pair<int,int>> ans;
         for(int i=lo;i<=hi;i++)
         {
-            if(mp.find(i)==mp.end())
-            {
-                ans.push_back({getVal(i),i});
-            }
-            else
-            {
-                ans.push_back({mp[i],i});
-            }
+            // if(mp.find(i)==mp.end())
+            // {
+            //     ans.push_back({getVal(i),i});
+            // }
+            // else
+            // {
+            //     ans.push_back({mp[i],i});
+            // }
+            ans.push_back({getVal(i),i});
         }
         // for(auto i:mp)
         // {
