@@ -19,32 +19,46 @@ public:
     // }
 
 
-    int dp[10001][101];
-    int getAns(int floor,int eggs)
-    {
-        if(floor<=1) return floor;
-        if(eggs==1) return floor;
-        if(dp[floor][eggs]!=-1) return dp[floor][eggs];
-        int mini=INT_MAX,l=1,h=floor,temp=0;
-        while(l<=h)
-        {
-            int mid=(l+h)>>1;
-            int bottom=getAns(mid-1,eggs-1);   //egg broken check for down floors of mid
-            int up=getAns(floor-mid,eggs) ;   // not broken check for up floors of mid
-            temp=1+max(bottom,up);          //store max of both 
-            if(bottom<up){                  //since up is more than bottom and we need more in worst case 
-              l=mid+1;                       // so l=mid+1 to gain more temp for worst case : upward
-            }
-            else                             //bottom > up so we will go downward 
-            {    
-                h=mid-1;
-            }
-            mini=min(mini,temp);               //store minimum attempts
-        }
-        return dp[floor][eggs]=mini;
+    // int dp[10001][101];
+    // int getAns(int floor,int eggs)
+    // {
+    //     if(floor<=1) return floor;
+    //     if(eggs==1) return floor;
+    //     if(dp[floor][eggs]!=-1) return dp[floor][eggs];
+    //     int mini=INT_MAX,l=1,h=floor,temp=0;
+    //     while(l<=h)
+    //     {
+    //         int mid=(l+h)>>1;
+    //         int bottom=getAns(mid-1,eggs-1);   //egg broken check for down floors of mid
+    //         int up=getAns(floor-mid,eggs) ;   // not broken check for up floors of mid
+    //         temp=1+max(bottom,up);          //store max of both 
+    //         if(bottom<up){                  //since up is more than bottom and we need more in worst case 
+    //           l=mid+1;                       // so l=mid+1 to gain more temp for worst case : upward
+    //         }
+    //         else                             //bottom > up so we will go downward 
+    //         {    
+    //             h=mid-1;
+    //         }
+    //         mini=min(mini,temp);               //store minimum attempts
+    //     }
+    //     return dp[floor][eggs]=mini;
+    // }
+    // int superEggDrop(int k, int n) {
+    //     memset(dp,-1,sizeof(dp));
+    //     return getAns(n,k);
+    // }
+
+  int superEggDrop(int k, int n) {
+    int moves = 0;
+    vector<vector<int>> dp(n + 1, vector<int>(k + 1));
+
+    while (dp[moves][k] < n) {
+      ++moves;
+      for (int eggs = 1; eggs <= k; ++eggs)
+        dp[moves][eggs] = dp[moves - 1][eggs - 1] + dp[moves - 1][eggs] + 1;
     }
-    int superEggDrop(int k, int n) {
-        memset(dp,-1,sizeof(dp));
-        return getAns(n,k);
-    }
+
+    return moves;
+  }
+
 };
