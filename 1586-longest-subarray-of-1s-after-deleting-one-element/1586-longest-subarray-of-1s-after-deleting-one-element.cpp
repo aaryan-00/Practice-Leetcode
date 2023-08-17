@@ -7,11 +7,11 @@ public:
         {
             pre[i+1]=pre[i]+nums[i];
         }
-        for(auto i:pre)
-        {
-            cout<<i<<" ";
-        }
-        cout<<endl;
+        // for(auto i:pre)
+        // {
+        //     cout<<i<<" ";
+        // }
+        // cout<<endl;
 
         int temp=0;
         int ans=0;
@@ -38,7 +38,7 @@ public:
                 zero=i;
             }
             
-            cout<<ans<<" "<<temp<<endl;
+            // cout<<ans<<" "<<temp<<endl;
         }
         if(!f)ans--;
         // ans=max(ans,temp);
