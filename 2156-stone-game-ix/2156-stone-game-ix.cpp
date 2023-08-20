@@ -34,7 +34,7 @@ public:
             }
         }
         
-        if ((zero + 1) % 2 == 0) 
+        if (zero & 1) 
         {
             if (two - 2 >  one) {
                 return true;
