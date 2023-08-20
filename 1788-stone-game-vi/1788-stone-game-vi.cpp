@@ -11,18 +11,15 @@ public:
         int i=1;
         while(!pq.empty())
         {
+            int val=pq.top().first;
+            int ind=pq.top().second;
+            pq.pop();
             if(i&1)
             {
-                int val=pq.top().first;
-                int ind=pq.top().second;
-                pq.pop();
                 ans+=aliceValues[ind];
             }
             else
             {
-                int val=pq.top().first;
-                int ind=pq.top().second;
-                pq.pop();
                 ans-=bobValues[ind];
             }
             i++;
