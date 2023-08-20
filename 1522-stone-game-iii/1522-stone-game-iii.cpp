@@ -3,7 +3,7 @@
 //     int dp[50001][2];
 //     int getAns(vector<int> &piles,int ind,bool alice)
 //     {
-//         int n=piles.size();
+//         int n=stoneValue.size();
 //         if(ind==n) return 0;
 //         if(dp[ind][alice]!=-1) return dp[ind][alice];
 //         if(alice)
@@ -11,8 +11,8 @@
 //             int currSum=0,ans=INT_MIN;
 //             for(int x=1;x<=min(3,n-ind);x++)
 //             {
-//                 currSum+=piles[x+ind-1];
-//                 ans=max(ans,currSum+getAns(piles,ind+x,!alice));
+//                 currSum+=stoneValue[x+ind-1];
+//                 ans=max(ans,currSum+getAns(stoneValue,ind+x,!alice));
 //             }
 //             return dp[ind][alice]=ans;
 
@@ -20,8 +20,8 @@
 //         int currSum=0,ans=INT_MAX;
 //         for(int x=1;x<=min(3,n-ind);x++)
 //         {
-//             currSum+=piles[x+ind-1];
-//             ans=min(ans,getAns(piles,ind+x,!alice));
+//             currSum+=stoneValue[x+ind-1];
+//             ans=min(ans,getAns(stoneValue,ind+x,!alice));
 //         }
 //         return dp[ind][alice]=ans;
 //     }
@@ -61,3 +61,10 @@ public:
         return "Tie";
     }
 };
+
+// dp[i] represents the max score diff between A and B when we start @ index i.
+// That's why we are going right-to-left in order to get the last diff, then current diff - last diff and etc.
+// The trick of the hard problem: instead of scores for A and B we work with score difference.
+// diff > 0 - wins A, diff < 0 - wins B, diff == 0 - tie
+// This is the trick: A - (B - (A - (B - (A - (B - (A - B)))))) resolves(!!!) to A - B + A - B + A - B + A - B.
+// We remove B score from A all the way.
