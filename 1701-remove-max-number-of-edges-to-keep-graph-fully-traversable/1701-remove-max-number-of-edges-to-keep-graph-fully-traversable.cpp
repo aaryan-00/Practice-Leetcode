@@ -22,7 +22,7 @@ public:
         b=findParent(b);
         if(a!=b)
         {
-            if(sizes[b]>sizes[a]) swap(a,b);
+            if(sizes[b]>sizes[a]) swap(b,a);
             parent[b]=a;
             sizes[a]+=sizes[b];
         }
