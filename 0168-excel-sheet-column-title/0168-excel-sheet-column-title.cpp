@@ -2,7 +2,6 @@ class Solution {
 public:
     string convertToTitle(int columnNumber) {
         string ans="";
-        if(columnNumber==1) return "A";
         while(columnNumber>0)
         {
             int rem=columnNumber%26;
