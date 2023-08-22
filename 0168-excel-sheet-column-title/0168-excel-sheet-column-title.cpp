@@ -3,7 +3,7 @@ public:
     string convertToTitle(int columnNumber) {
         string ans="";
         if(columnNumber==1) return "A";
-        while(columnNumber>26)
+        while(columnNumber>0)
         {
             int rem=columnNumber%26;
             if(rem==0) 
@@ -15,8 +15,7 @@ public:
             ans=temp+ans;
             columnNumber/=26;
         }
-        cout<<columnNumber<<endl;
-        char temp= char('A'+columnNumber - 1);
-        return temp+ans;
+        // char temp= char('A'+columnNumber - 1);
+        return ans;
     }
 };
