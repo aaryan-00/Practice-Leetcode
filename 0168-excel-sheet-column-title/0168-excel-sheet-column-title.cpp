@@ -10,11 +10,9 @@ public:
                 rem=26;
                 columnNumber--;
             }
-            char temp= char('A'+rem-1);
-            ans=temp+ans;
+            ans=char('A'+rem-1)+ans;
             columnNumber/=26;
         }
-        // char temp= char('A'+columnNumber - 1);
         return ans;
     }
 };
