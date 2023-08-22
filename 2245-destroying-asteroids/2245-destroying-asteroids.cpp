@@ -1,13 +1,12 @@
 class Solution {
 public:
-    bool asteroidsDestroyed(int mass, vector<int>& asteroids) {
+    bool asteroidsDestroyed(long mass, vector<int>& asteroids) {
         sort(asteroids.begin(),asteroids.end());
-        long sum=mass;
         for(int i=0;i<asteroids.size();i++)
         {
-            if(sum>=asteroids[i])
+            if(mass>=asteroids[i])
             {
-                sum+=asteroids[i];
+                mass+=asteroids[i];
             }
             else return false;
         }
