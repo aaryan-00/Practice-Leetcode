@@ -15,33 +15,50 @@ public:
     //     }
     //     return maxi+1;
     // }
+
+    // int firstMissingPositive(vector<int>& nums) {
+    //     sort(nums.begin(),nums.end());
+    //     int iter=0;
+    //     while(iter<nums.size() && nums[iter]<=0)
+    //     {
+    //         iter++;
+    //     }
+    //     if(iter==nums.size()) return 1;
+    //     int curr=1,prev=0;
+    //     while(iter<nums.size())
+    //     {
+    //         if(prev==nums[iter])
+    //         {
+    //             iter++;
+    //         }
+    //         else
+    //         {
+    //             if(curr!=nums[iter])
+    //             {
+    //                 return curr;
+    //             }
+    //             prev=nums[iter];
+    //             iter++;
+    //             curr++;  
+    //         }
+    //     }
+    //     return curr;
+    // }
+
+
     int firstMissingPositive(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        int iter=0;
-        while(iter<nums.size() && nums[iter]<=0)
+        int i = 0;
+        int n = nums.size();
+        while (i < n)
         {
-            iter++;
-        }
-        if(iter==nums.size()) return 1;
-        int curr=1,prev=0;
-        while(iter<nums.size())
-        {
-            if(prev==nums[iter])
-            {
-                iter++;
-            }
+            if (nums[i] > 0 && nums[i] <= n && nums[nums[i] - 1] != nums[i])
+                swap(nums[i], nums[nums[i]-1]);
             else
-            {
-                if(curr!=nums[iter])
-                {
-                    return curr;
-                }
-                prev=nums[iter];
-                iter++;
-                curr++;  
-            }
- 
+                i++;
         }
-        return curr;
+        for (i = 0; i < n; ++i)
+            if (nums[i] != (i+1))
+                return i+1;
+        return n+1;
     }
 };
