@@ -12,7 +12,7 @@ public:
         }
         return true;
     }
-    void generateDisjointSubsequences(string& s, int idx, string s1, string s2) {
+    void getAns(string& s, int idx, string &s1, string &s2) {
         if (idx == s.size()) {
             if(palin(s1) && palin(s2))
             {
@@ -20,12 +20,17 @@ public:
             }
             return;
         }
-        generateDisjointSubsequences(s, idx + 1, s1 + s[idx], s2);
-        generateDisjointSubsequences(s, idx + 1, s1, s2 + s[idx]);
-        generateDisjointSubsequences(s, idx + 1, s1, s2);
+        s1.push_back(s[idx]);
+        getAns(s, idx + 1, s1, s2);
+        s1.pop_back();
+        s2.push_back(s[idx]);
+        getAns(s, idx + 1, s1, s2);
+        s2.pop_back();
+        getAns(s, idx + 1, s1, s2);
 }
     int maxProduct(string s) {
-        generateDisjointSubsequences(s,0,"","");
-    return ans;
+        string s1="",s2="";
+        getAns(s,0,s1,s2);
+        return ans;
     }
 };
