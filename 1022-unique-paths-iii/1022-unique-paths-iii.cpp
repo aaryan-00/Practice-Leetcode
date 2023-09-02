@@ -9,7 +9,7 @@ public:
         if(grid[i][j]==2)
         {
             if(cost==cnt) ans++;
-            else return;
+            return;
         }
         vis[i][j]=true;
         if(grid[i][j]==0)
