@@ -1,7 +1,8 @@
 class Solution {
 public:
     unordered_set<string> ss;
-    int dp[301];
+    // int dp[301];
+    vector<int> dp;
     bool getAns(string &s,int ind)
     {
         if(ind==s.size()) return true;
@@ -22,7 +23,8 @@ public:
         {
             ss.insert(i);
         }
-        memset(dp,-1,sizeof(dp));
+        // memset(dp,-1,sizeof(dp));
+        dp.resize(s.size(),-1);
         return getAns(s,0);
     }
 };
