@@ -1,8 +1,6 @@
 class Solution {
 public:
     unordered_set<string> ss;
-    // int dp[301];
-    // vector<int> dp;
     vector<string> ans;
     vector<string> curr;
     void getAns(string &s,int ind)
@@ -23,8 +21,6 @@ public:
             }
             return;
         }
-        // if(dp[ind]!=-1) return dp[ind];
-        bool ans=false;
         for(int i=ind+1;i<=s.size();i++)
         {
             string temp=s.substr(ind,i-ind);
@@ -35,15 +31,12 @@ public:
                 curr.pop_back();
             }
         }
-        // return dp[ind]=ans;
     }
     vector<string> wordBreak(string s, vector<string>& wordDict) {
         for(auto &i:wordDict)
         {
             ss.insert(i);
         }
-        // memset(dp,-1,sizeof(dp));
-        // dp.resize(s.size(),-1);
         ans.clear();
         getAns(s,0);
         return ans;
