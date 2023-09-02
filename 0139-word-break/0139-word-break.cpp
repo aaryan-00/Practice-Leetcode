@@ -1,6 +1,6 @@
 class Solution {
 public:
-    set<string> ss;
+    unordered_set<string> ss;
     int dp[301];
     bool getAns(string &s,int ind)
     {
