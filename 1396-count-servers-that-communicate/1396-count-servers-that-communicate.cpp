@@ -71,7 +71,7 @@ public:
             }
             parent[b]=a;
             sizes[a]+=sizes[b];
-            sizes[b]=0;
+            // sizes[b]=0;
         }
     }  
 };
@@ -113,7 +113,7 @@ public:
         }
         for(int i=0;i<=(n*m);i++)
         {
-            if(uf.sizes[i]>1)ans+=uf.sizes[i];
+            if(uf.sizes[i]>1 && uf.parent[i]==i)ans+=uf.sizes[i];
         }
         return ans;
     }
