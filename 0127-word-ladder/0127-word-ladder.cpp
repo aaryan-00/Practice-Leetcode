@@ -23,11 +23,10 @@ public:
                     {
                         string temp=curr;
                         temp[i]=j;
-                        // cout<<temp<<endl;
                         if(temp!=curr && mp.count(temp))
                         {
                             mp.erase(temp);
-                            q.push({temp});
+                            q.push(temp);
                         }
                     }
                 }
