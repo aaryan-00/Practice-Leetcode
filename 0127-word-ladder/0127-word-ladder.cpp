@@ -6,16 +6,15 @@ public:
         {
             mp[i]++;
         }
-        queue<pair<string,string>> q;
-        q.push({beginWord,""});
+        queue<string> q;
+        q.push(beginWord);
         int level=1;
         while(!q.empty())
         {
             int sz=q.size();
             while(sz--)
             {
-                string curr=q.front().first;
-                string prev=q.front().second;
+                string curr=q.front();
                 q.pop();
                 if(curr==endWord) return level;
                 for(int i=0;i<curr.size();i++)
@@ -25,10 +24,10 @@ public:
                         string temp=curr;
                         temp[i]=j;
                         // cout<<temp<<endl;
-                        if(temp!=curr && temp!=prev && mp.find(temp)!=mp.end())
+                        if(temp!=curr && mp.find(temp)!=mp.end())
                         {
                             mp.erase(temp);
-                            q.push({temp,curr});
+                            q.push({temp});
                         }
                     }
                 }
