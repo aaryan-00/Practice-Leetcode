@@ -1,10 +1,10 @@
 class Solution {
 public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-        unordered_map<string,int> mp;
+        unordered_set<string> mp;
         for(auto &i:wordList)
         {
-            mp[i]++;
+            mp.insert(i);
         }
         queue<string> q;
         q.push(beginWord);
@@ -24,7 +24,7 @@ public:
                         string temp=curr;
                         temp[i]=j;
                         // cout<<temp<<endl;
-                        if(temp!=curr && mp.find(temp)!=mp.end())
+                        if(temp!=curr && mp.count(temp))
                         {
                             mp.erase(temp);
                             q.push({temp});
