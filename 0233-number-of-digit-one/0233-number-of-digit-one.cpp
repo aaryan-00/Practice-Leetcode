@@ -14,7 +14,6 @@ public:
             return dp[pos][tight][cnt];
         }
         ll ans = 0;
-
         ll ub = 9;
         if (tight == 1)
         {
@@ -22,9 +21,7 @@ public:
         }
         for (ll dig = 0; dig <= ub; dig++)
         {
-            int new_cnt=cnt;
-            if(dig==1) new_cnt++;
-            ans += getAns(num, pos + 1, tight & (dig == ub), new_cnt);
+            ans += getAns(num, pos + 1, tight & (dig == ub), cnt+(dig==1));
         }
         return dp[pos][tight][cnt] = ans;
     }
