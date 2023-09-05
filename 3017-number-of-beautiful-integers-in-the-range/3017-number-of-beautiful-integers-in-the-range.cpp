@@ -1,7 +1,7 @@
 class Solution {
 public:
     long k;
-    long dp[10][10][10][2][2][20];
+    long dp[11][11][11][2][2][20];
     // int solve(string &num,int pos,bool tight,bool isLeading,int cntEven,int cntOdd,int rem)
     int solve(vector<int> &num,int pos,bool tight,bool isLeading,int cntEven,int cntOdd,int rem)
     {
