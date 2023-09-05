@@ -26,14 +26,6 @@ public:
             }
             else
             {
-                // if(dig%2==0)
-                // {
-                //     ans+=solve(num,pos+1,tight&(dig==ub),0,cntEven+1,cntOdd,(rem*10+dig)%k);
-                // }
-                // else
-                // {
-                //     ans+=solve(num,pos+1,tight&(dig==ub),0,cntEven,cntOdd+1,(rem*10+dig)%k);
-                // }
                 ans+=solve(num,pos+1,tight&(dig==ub),0,cntEven+(dig%2==0),cntOdd+(dig%2!=0),(rem*10+dig)%k);
             }
         }
