@@ -39,7 +39,6 @@ public:
                 {
                     tail->next=newNode;
                     tail=tail->next;
-                    // tail=newNode;
                 }
                 head=head->next;
             }
