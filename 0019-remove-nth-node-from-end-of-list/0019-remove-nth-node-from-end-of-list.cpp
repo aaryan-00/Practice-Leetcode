@@ -19,19 +19,27 @@ public:
             sz++;
             temp=temp->next;
         }
-        if(sz==1) return nullptr;
-        if(n==sz) return head->next;
-        int rem=sz-n;
-        rem--;
-        ListNode* iter=head;
-        while(rem--)
+        
+        if(n==sz) 
         {
-            iter=iter->next;   
+            ListNode* todelete=head;
+            head=head->next;
+            delete(todelete);
         }
-        ListNode* nexti=iter->next->next;
-        ListNode* todelete=iter->next;
-        delete(todelete);
-        iter->next=nexti;
+        else
+        {
+            int rem=sz-n;
+            rem--;
+            ListNode* iter=head;
+            while(rem--)
+            {
+                iter=iter->next;   
+            }
+            ListNode* nexti=iter->next->next;
+            ListNode* todelete=iter->next;
+            delete(todelete);
+            iter->next=nexti;
+        }
 
         
         return head;
