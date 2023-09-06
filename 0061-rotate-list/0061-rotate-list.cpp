@@ -29,17 +29,17 @@ public:
         {
             iter=iter->next;   
         }
-        // cout<<iter->val<<endl;
+
         ListNode* ans=iter->next;
-        cout<<ans->val<<endl;
-        cout<<head->val<<endl;
         iter->next=nullptr;
+
         ListNode* goo=ans;
         while(goo->next!=nullptr)
         {
             goo=goo->next;
         }
         goo->next=head;
+        
         return ans;
     }
 };
