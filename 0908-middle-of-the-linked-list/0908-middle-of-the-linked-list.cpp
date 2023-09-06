@@ -12,10 +12,9 @@ class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
         //finding mid
-        ListNode *slow = head, *fast = head, *prev=NULL;
+        ListNode *slow = head, *fast = head;
         while(fast != NULL && fast->next != NULL)
         {
-            prev=slow;
             fast = fast->next->next;
             slow = slow->next;
         }
