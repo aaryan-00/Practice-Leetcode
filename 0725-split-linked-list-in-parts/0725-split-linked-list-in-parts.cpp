@@ -26,7 +26,7 @@ public:
         {
             int curr=val+(rem>0);
             rem--;
-            ListNode* res=nullptr, *tail=nullptr;
+            ListNode* res=nullptr, *tail=res;
             while(curr-- && head!=nullptr)
             {
                 ListNode* newNode=new ListNode(head->val);
@@ -39,6 +39,7 @@ public:
                 {
                     tail->next=newNode;
                     tail=tail->next;
+                    // tail=newNode;
                 }
                 head=head->next;
             }
