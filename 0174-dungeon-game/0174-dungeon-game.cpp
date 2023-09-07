@@ -10,7 +10,7 @@ public:
         }
         if(i>=n||j>=m||mid+dungeon[i][j]<=0) return false;
 
-        if(dp[i][j].first!=-1 && dp[i][j].first>mid+dungeon[i][j]) return dp[i][j].second;
+        if(dp[i][j].first!=-1 && dp[i][j].first>=mid+dungeon[i][j]) return dp[i][j].second;
         bool ans=false;
         ans=ans||check(mid+dungeon[i][j],dungeon,i+1,j);
         ans=ans||check(mid+dungeon[i][j],dungeon,i,j+1);
