@@ -17,48 +17,33 @@ public:
 class Solution {
 public:
     Node* copyRandomList(Node* head) {
-        if(!head) return nullptr;
-
-        Node* original = head; // itr for original
-        Node* cloned = nullptr; // itr for cloned
-        Node* temp = nullptr; // temporary for node creation
-
-        // First pass: clone nodes and link them next to origial
-        while(original) {
-            temp = new Node(original->val);
-            temp->next = original->next;
-            original->next=temp;
-            original = temp->next;
+        Node* temp = head;
+        //step 1
+        while(temp != NULL) {
+            Node* newNode = new Node(temp->val);
+            newNode->next = temp->next;
+            temp->next = newNode;
+            temp = temp->next->next;
         }
-
-        original = head;
-        Node* newHead = head->next;
-
-        // Second pass: Assign random pointers to cloned nodes
-        while(original) {
-            if(original->random) {
-                original->next->random = original->random->next;
-            } else {
-                original->next->random = nullptr;
-            }
-            original = original->next->next; // skip copy
+        //step 2
+        Node* itr = head;
+        while(itr != NULL) {
+            if(itr->random != NULL)
+                itr->next->random = itr->random->next;
+            itr = itr->next->next;
         }
-        
-        original = head;
-
-        // Third Pass: Seperate original and cloned 
-        while(original) {
-            temp = original->next; 
-            original->next = temp->next; 
-            original = original->next;
-
-            if(original) {
-                temp->next = original->next;
-            } else {
-                temp->next = nullptr;
-            }
+        //step 3
+        Node* dummy = new Node(0);
+        itr = head;
+        temp = dummy;
+        Node* fast;
+        while(itr != NULL) {
+            fast = itr->next->next;
+            temp->next = itr->next;
+            itr->next = fast;
+            temp = temp->next;
+            itr = fast;
         }
-
-    return newHead;
+        return dummy->next;
     }
 };
