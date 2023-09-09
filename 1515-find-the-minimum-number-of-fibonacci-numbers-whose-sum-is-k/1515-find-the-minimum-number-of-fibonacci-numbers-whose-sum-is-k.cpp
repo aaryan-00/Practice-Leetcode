@@ -38,9 +38,9 @@ public:
         int cnt=0;
         while(k>0)
         {
-            cout<<k<<endl;
+            // cout<<k<<endl;
             int ind=find_LowEqual(fabo,k);
-            cout<<ind<<endl;
+            // cout<<ind<<endl;
             k-=fabo[ind];
             cnt++;
         }
