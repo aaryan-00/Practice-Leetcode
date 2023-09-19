@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int dp[101][10];
+    int dp[101][4];
     int getAns(int i,int prev,string &s)
     {
         if(i==s.size())
