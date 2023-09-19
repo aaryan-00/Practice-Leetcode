@@ -13,7 +13,6 @@ public:
         m=grid[0].size();
         if(getCnt(0,0,grid)==false) return true;
         grid[0][0]=1;
-        // return !getCnt(0, 0,grid);
         if(getCnt(0,0,grid)) return false;
         return true;
     }
