@@ -41,11 +41,9 @@ public:
         sum-=x;
         if(sum<0) return -1;
         if(sum==0) return n;
-
         int s=0,e=0;  
         int curr=0; 
         int ans=INT_MIN; 
-        // cout<<sum<<endl;
         while(e<n)
         {
             while(curr+nums[e]>sum && s<=e)
@@ -54,14 +52,12 @@ public:
                 s++;
             }
             curr+=nums[e];
-            // cout<<curr<<" ";
             if(curr==sum) 
             {
                 ans=max(ans,e-s+1);
             }
             e++; 
         }
-
         return n-ans;
     }
 };
