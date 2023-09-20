@@ -20,7 +20,7 @@ public:
         vector<int> ans;
         for(int i=0;i<n;i++)
         {
-            cout<<preleft[i]<<" "<<preright[i]<<endl;
+            // cout<<preleft[i]<<" "<<preright[i]<<endl;
             if(i<k||i+k>=n) continue;
             
             if(preleft[i-1]>=k && preright[i+1]>=k)
