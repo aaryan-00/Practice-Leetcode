@@ -18,11 +18,9 @@ public:
             }
         }
         vector<int> ans;
-        for(int i=0;i<n;i++)
+        for(int i=k;i<n-k;i++)
         {
             // cout<<preleft[i]<<" "<<preright[i]<<endl;
-            if(i<k||i+k>=n) continue;
-            
             if(preleft[i-1]>=k && preright[i+1]>=k)
             {
                 ans.push_back(i);
