@@ -38,11 +38,11 @@ public:
         // }
         // return ans;
 
-        int s=0,e;
+        int s=0;
         int maxi=0;
         while(s<n)
         {
-            e=s;
+            int e=s;
             if(e+1<n && arr[e+1]>arr[e])
             {
                 while(e+1<n && arr[e+1]>arr[e]) e++;
