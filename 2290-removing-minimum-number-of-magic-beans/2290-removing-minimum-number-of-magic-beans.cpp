@@ -26,9 +26,7 @@ public:
         for(int i=1;i<=n;i++)
         {
             long long preee=pre[i-1],post=suff[i];
-            // cout<<preee<<" "<<post<<endl;
-            long long curr=preee+post-(long long)(n-i)*(long long)beans[i-1];
-            // cout<<curr<<endl;
+            long long curr=preee+post-(n-i)*(long long)beans[i-1];
             ans=min(ans,curr);
             
         }
