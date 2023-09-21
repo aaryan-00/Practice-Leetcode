@@ -63,13 +63,7 @@ public:
         sort(nums.begin(), nums.end());
         int index = 0;
         for (auto & it: queries) {
-            offlineQueries.push_back({
-            it[1],
-            {
-                it[0],
-                index++
-            }
-            });
+            offlineQueries.push_back({it[1],{it[0],index++}});
         }
         sort(offlineQueries.begin(), offlineQueries.end());
         int i = 0;
