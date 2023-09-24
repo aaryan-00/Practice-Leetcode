@@ -22,7 +22,7 @@ public:
             int j=curr.second.second;
             if(vis[i][j]) continue;
             vis[i][j]=true;
-            cout<<cnt<<endl;
+            // cout<<cnt<<endl;
             if(i==n-1 && j==m-1) return cnt;
             for(int it=0;it<=3;it++)
             {
