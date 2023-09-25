@@ -35,16 +35,16 @@ public:
 			adjList[v[1]].push_back(v[0]);
 		}
 		dfs1(0, 0);
-        for(auto &i:sub_sz)
-        {
-            cout<<i<<" ";
-        }
-        cout<<endl;
-        for(auto &i:dis_val)
-        {
-            cout<<i<<" ";
-        }
-        cout<<endl;
+        // for(auto &i:sub_sz)
+        // {
+        //     cout<<i<<" ";
+        // }
+        // cout<<endl;
+        // for(auto &i:dis_val)
+        // {
+        //     cout<<i<<" ";
+        // }
+        // cout<<endl;
 		dfs2(0, 0, 0);
         return ans;
     }
