@@ -25,12 +25,7 @@ public:
             adj[par].push_back(i);
         }
         dfs1(0,0);
-        // for(auto &i:sub_sz)
-        // {
-        //     cout<<i<<" ";
-        // }
-        // cout<<endl;
-        map<long long,long long> mp;
+        unordered_map<long long,long long> mp;
         for(int i=0;i<n;i++)
         {
             long long curr=0,curr_max=1;
@@ -44,15 +39,18 @@ public:
             {
                 curr_max*=rem;
             }
-            // cout<<curr_max<<endl;
             mp[curr_max]++;
         }
-        int maxi=1;
+        long long maxi=1,val=0;
         for(auto i:mp)
         {
-            maxi=i.second;
+            if(i.first>val)
+            {
+                maxi=i.second;
+                val=i.first;
+            }
+            
         }
         return maxi;
-
     }
 };
