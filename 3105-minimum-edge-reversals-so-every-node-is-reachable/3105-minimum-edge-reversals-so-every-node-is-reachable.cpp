@@ -26,21 +26,20 @@ public:
     vector<int> minEdgeReversals(int n, vector<vector<int>>& edges) {
         vector<pair<int,int>>adj[n];
         for(int i=0;i<edges.size();i++){
-            // for(int j=0;j<edges[i].size();j++){
-                adj[edges[i][0]].push_back({edges[i][1],0});
-                adj[edges[i][1]].push_back({edges[i][0],1});
-            // }
+            int u=edges[i][0],v=edges[i][1];
+            adj[u].push_back({v,0});
+            adj[v].push_back({u,1});
         }
-        // for(int i=0;i<n;i++)
-        // {
-        //     cout<<i<<":";
-        //     for(auto it:adj[i])
-        //     {
-        //         cout<<it.first<<","<<it.second<<" ";
-        //     }
-        //     cout<<endl;
-        // }
-        vector<int>v(n,0);
+        for(int i=0;i<n;i++)
+        {
+            cout<<i<<":";
+            for(auto it:adj[i])
+            {
+                cout<<it.first<<","<<it.second<<" ";
+            }
+            cout<<endl;
+        }
+
         vector<int>dp(n,0);
 
         int ans=0;
@@ -54,10 +53,9 @@ public:
         fl=1;
         fill(vis.begin(),vis.end(),0) ;
         // cout<<adj[0][0].second ;
+        
         dfs(vis,adj,{0,adj[0][0].second},ans,dp,fl);
-        for(int i=0;i<n;i++) v[i]=dp[i] ;
-        return v ;
-        // vector<int>dp(n,0) ;
+        return dp;
 
     }
 };
