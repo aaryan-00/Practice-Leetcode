@@ -9,7 +9,7 @@ public:
             maxi=max(maxi,1LL*milestones[i]);
         }
         sum-=maxi;  
-        cout<<sum<<" "<<maxi<<endl; 
+        // cout<<sum<<" "<<maxi<<endl; 
         if(sum>=maxi) return sum+maxi;  
         return sum*2+1;
     }
