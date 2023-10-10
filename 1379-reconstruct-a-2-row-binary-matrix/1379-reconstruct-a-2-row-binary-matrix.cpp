@@ -10,7 +10,7 @@ public:
             if(i==2)mini++;
         }
         if(total!=upper+lower || mini>min(upper,lower)) return {};
-        vector<vector<int>> ans(2,vector<int>(n));
+        vector<vector<int>> ans(2,vector<int>(n,0));
         for(int i=0;i<n;i++)
         {
             if(colsum[i]==2)
@@ -19,11 +19,6 @@ public:
                 ans[1][i]=1;
                 upper--;
                 lower--;
-            }
-            else if(colsum[i]==0)
-            {
-                ans[0][i]=0;
-                ans[1][i]=0;
             }
         }
         for(int i=0;i<n;i++)
