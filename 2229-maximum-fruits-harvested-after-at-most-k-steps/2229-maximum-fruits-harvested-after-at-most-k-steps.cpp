@@ -19,21 +19,21 @@ public:
         }
         long long ans=0;
         //right
-        if(startPos<n)
-        {
-            int rightpos=startPos+k+1;
-            rightpos=min(rightpos,n);
+        // if(startPos<n)
+        // {
+        //     int rightpos=startPos+k+1;
+        //     rightpos=min(rightpos,n);
             
-            // cout<<rightpos<<endl;
-            ans=max(ans,presum[rightpos]-presum[startPos]);
-        }
-        // cout<<ans<<endl;
-        //left
-        int leftpos=startPos-k;
-        leftpos=max(leftpos,0);
-        // cout<<leftpos<<endl;
-        ans=max(ans,presum[min(startPos+1,n)]-presum[leftpos]);
-        for(int i=1;i<min(n,k);i++)
+        //     // cout<<rightpos<<endl;
+        //     ans=max(ans,presum[rightpos]-presum[startPos]);
+        // }
+        // // cout<<ans<<endl;
+        // //left
+        // int leftpos=startPos-k;
+        // leftpos=max(leftpos,0);
+        // // cout<<leftpos<<endl;
+        // ans=max(ans,presum[min(startPos+1,n)]-presum[leftpos]);
+        for(int i=0;i<=min(n,k);i++)
         {
             int forward=i+startPos+1;
             forward=min(max(0,forward),n);
@@ -43,11 +43,11 @@ public:
             backward=min(n,backward);
             ans=max(ans,presum[forward]-presum[backward]);
         }
-        for(int i=1;i<min(n,k);i++)
+        for(int i=0;i<=min(n,k);i++)
         {
             int backward=startPos-i;
             backward=max(min(n,backward),0);
-            
+
             int rem=k-2*i;
             int forward=rem+startPos+1;
             forward=min(max(0,forward),n);
