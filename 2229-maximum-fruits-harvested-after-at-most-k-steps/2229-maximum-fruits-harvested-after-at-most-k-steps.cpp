@@ -3,9 +3,6 @@ public:
     int maxTotalFruits(vector<vector<int>>& fruits, int startPos, int k) {
         int tot=fruits.size();
         int n=fruits[tot-1][0]+1;
-        
-        // if(startPos>n) return 0;
-        // cout<<n<<endl;
         vector<long long> presum(n+1,0);
         for(auto i:fruits)
         {
@@ -20,10 +17,6 @@ public:
             if(startPos<=n) return presum[startPos+1]-presum[startPos];
             return 0;
         }
-        // for(int i=0;i<=n;i++)
-        // {
-        //     cout<<presum[i]<<endl;
-        // }
         long long ans=0;
         //right
         if(startPos<n)
@@ -54,13 +47,10 @@ public:
         {
             int backward=startPos-i;
             backward=max(min(n,backward),0);
-            // backward=min(n,backward);
+            
             int rem=k-2*i;
             int forward=rem+startPos+1;
             forward=min(max(0,forward),n);
-            // cout<<forward<<" "<<backward<<endl;
-            // cout<<presum[forward]<<endl;
-            // cout<<presum[backward]<<endl;
             ans=max(ans,presum[forward]-presum[backward]);   
         }
         return ans;
