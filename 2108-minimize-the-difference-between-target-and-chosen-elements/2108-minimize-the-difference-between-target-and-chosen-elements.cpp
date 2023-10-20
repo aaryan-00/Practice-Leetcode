@@ -1,7 +1,7 @@
 class Solution {
 public:
     int m, n;
-    int dp[71][5000];
+    int dp[71][4901];
     int solve(vector<vector<int>>& mat, int row, int sum, const int &target)
     {
         if(row == m)
