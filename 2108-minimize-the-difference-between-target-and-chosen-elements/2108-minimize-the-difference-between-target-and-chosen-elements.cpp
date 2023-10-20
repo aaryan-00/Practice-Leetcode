@@ -2,7 +2,7 @@ class Solution {
 public:
     int m, n;
     int dp[71][5000];
-    int solve(vector<vector<int>>& mat, int row, int sum, const int& target)
+    int solve(vector<vector<int>>& mat, int row, int sum, const int &target)
     {
         if(row == m)
         {
@@ -15,7 +15,7 @@ public:
         for(int i=0; i<n; i++)
         {
             ans = min(ans, solve(mat, row+1, sum+mat[row][i], target));
-            // if(ans==0) break;
+            if(ans==0) break;
         }
         return dp[row][sum] = ans;
     }
